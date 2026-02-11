@@ -1,2 +1,23 @@
-# Ocean-View-Resort-Reservation-System
-A role-based web-based room reservation system developed using Java (JSP &amp; Servlets) and MySQL. The system supports admin and receptionist operations including reservation management, room availability checking, and billing.
+# Ocean View Resort Reservation System
+
+## Technologies Used
+- Java (JSP & Servlets)
+- MySQL
+- JDBC
+- Apache Tomcat
+- MVC Architecture
+
+## Features
+- Role-based authentication (Admin / Receptionist)
+- Room availability checking
+- Reservation management
+- Billing and invoice generation
+- Admin management module
+
+## Design Patterns Used
+- MVC
+- DAO
+- Singleton (Database connection)
+
+## Author
+Mohammed Munshak
