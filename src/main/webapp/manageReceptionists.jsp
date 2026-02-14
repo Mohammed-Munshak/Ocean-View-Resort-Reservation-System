@@ -276,20 +276,19 @@
       <div class="form-grid">
         <div>
           <label>Username</label>
-          <input type="text" name="username" required placeholder="Login ID" />
+          <input type="text" name="username" required />
         </div>
         <div>
           <label>Password</label>
-          <input type="text" name="password" required placeholder="Secure Password" />
+          <input type="text" name="password" required />
         </div>
         <div>
           <label>Full Name</label>
-          <input type="text" name="fullName" placeholder="Staff Name" />
+          <input type="text" name="fullName" />
         </div>
         <div>
           <label>Contact No</label>
-          <input type="text" name="contactNo" placeholder="Phone Number" />
-          <p>Number should be saved as 947XXXXXXXX</p>
+          <input type="text" name="contactNo" />
         </div>
         <div>
           <button type="submit" class="btn-add">
