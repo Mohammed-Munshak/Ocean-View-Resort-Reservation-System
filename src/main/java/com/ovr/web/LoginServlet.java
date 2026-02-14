@@ -46,6 +46,7 @@ public class LoginServlet extends HttpServlet {
         session.setAttribute("username", user.getUsername());
         session.setAttribute("role", user.getRole());
         session.setAttribute("fullName", user.getFullName());
+        session.setAttribute("contactNo", user.getContactNo());
 
         String userPhone = user.getContactNo(); 
         String managerPhone = "94743729022";
