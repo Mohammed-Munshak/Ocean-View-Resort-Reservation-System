@@ -22,7 +22,6 @@ public class BillingServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
 
-        // receptionist only
         HttpSession session = req.getSession(false);
         if (session == null || session.getAttribute("role") == null ||
                 !"RECEPTIONIST".equalsIgnoreCase((String) session.getAttribute("role"))) {
@@ -37,7 +36,6 @@ public class BillingServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
 
-        // receptionist only
         HttpSession session = req.getSession(false);
         if (session == null || session.getAttribute("role") == null ||
                 !"RECEPTIONIST".equalsIgnoreCase((String) session.getAttribute("role"))) {
@@ -67,7 +65,6 @@ public class BillingServlet extends HttpServlet {
             return;
         }
 
-        // Check for existing bill first (moved from dead code section)
         Bill existing = billDAO.findLatestBillByReservationId(r.getReservationId());
         
         if (existing != null) {
@@ -78,7 +75,6 @@ public class BillingServlet extends HttpServlet {
             return;
         }
 
-        // nights calculation
         long nightsLong = ChronoUnit.DAYS.between(r.getCheckIn(), r.getCheckOut());
         int nights = (int) Math.max(nightsLong, 1);
 

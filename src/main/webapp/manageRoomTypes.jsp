@@ -3,7 +3,6 @@
 <%@ page import="com.ovr.model.RoomType" %>
 
 <%
-  // --- BACKEND LOGIC PRESERVED ---
   String role = (String) session.getAttribute("role");
   if (role == null || !"ADMIN".equalsIgnoreCase(role)) {
     response.sendRedirect(request.getContextPath() + "/login.jsp");
@@ -25,7 +24,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
   <style>
-    /* --- THEME --- */
     :root {
       --primary-gradient: linear-gradient(135deg, #8D6E63 0%, #6D4C41 100%);
       --bg-color: #F4F1EA;
@@ -60,7 +58,6 @@
       margin-top: 0;
     }
 
-    /* --- CARDS --- */
     .card {
       background: var(--card-bg);
       padding: 30px;
@@ -70,7 +67,6 @@
       border-top: 4px solid var(--table-header);
     }
 
-    /* --- ALERTS --- */
     .alert {
       padding: 15px;
       border-radius: 6px;
@@ -80,10 +76,19 @@
       align-items: center;
       gap: 10px;
     }
-    .alert-success { background-color: #E8F5E9; color: var(--success-color); border: 1px solid #C8E6C9; }
-    .alert-error { background-color: #FFEBEE; color: var(--error-color); border: 1px solid #FFCDD2; }
 
-    /* --- ADD FORM --- */
+    .alert-success { 
+      background-color: #E8F5E9; 
+      color: var(--success-color); 
+      border: 1px solid #C8E6C9; 
+    }
+
+    .alert-error { 
+      background-color: #FFEBEE; 
+      color: var(--error-color); 
+      border: 1px solid #FFCDD2; 
+    }
+
     .form-grid {
       display: flex;
       gap: 20px;
@@ -127,10 +132,14 @@
       transition: transform 0.2s;
       height: 40px;
     }
-    .btn-add:hover { transform: translateY(-2px); }
 
-    /* --- TABLE STYLES --- */
-    .table-responsive { overflow-x: auto; }
+    .btn-add:hover { 
+      transform: translateY(-2px); 
+    }
+
+    .table-responsive { 
+      overflow-x: auto; 
+    }
 
     table {
       width: 100%;
@@ -153,10 +162,14 @@
       vertical-align: middle;
     }
 
-    tr:nth-child(even) { background-color: #FAF8F6; }
-    tr:hover { background-color: #F1EFE9; }
+    tr:nth-child(even) { 
+      background-color: #FAF8F6; 
+    }
+    
+    tr:hover { 
+      background-color: #F1EFE9; 
+    }
 
-    /* --- TABLE FORMS --- */
     .inline-form {
       display: flex;
       gap: 8px;
@@ -178,7 +191,10 @@
       cursor: pointer;
       font-size: 12px;
     }
-    .btn-update:hover { background-color: #6D4C41; }
+
+    .btn-update:hover { 
+      background-color: #6D4C41; 
+    }
 
     .btn-toggle {
       padding: 6px 12px;
@@ -190,13 +206,28 @@
       width: 90px;
     }
     
-    .btn-deactivate { background-color: #FFEBEE; color: #C62828; border: 1px solid #FFCDD2; }
-    .btn-deactivate:hover { background-color: #C62828; color: white; }
+    .btn-deactivate { 
+      background-color: #FFEBEE; 
+      color: #C62828; 
+      border: 1px solid #FFCDD2; 
+    }
 
-    .btn-activate { background-color: #E8F5E9; color: #2E7D32; border: 1px solid #C8E6C9; }
-    .btn-activate:hover { background-color: #2E7D32; color: white; }
+    .btn-deactivate:hover { 
+      background-color: #C62828; 
+      color: white; 
+    }
 
-    /* --- BADGES --- */
+    .btn-activate { 
+      background-color: #E8F5E9; 
+      color: #2E7D32; 
+      border: 1px solid #C8E6C9; 
+    }
+    
+    .btn-activate:hover { 
+      background-color: #2E7D32; 
+      color: white; 
+    }
+
     .badge {
       padding: 4px 8px;
       border-radius: 12px;
@@ -204,10 +235,17 @@
       font-weight: bold;
       text-transform: uppercase;
     }
-    .badge-active { background-color: #E8F5E9; color: #2E7D32; }
-    .badge-inactive { background-color: #FFEBEE; color: #C62828; }
+    
+    .badge-active { 
+      background-color: #E8F5E9; 
+      color: #2E7D32; 
+    }
+    
+    .badge-inactive { 
+      background-color: #FFEBEE; 
+      color: #C62828; 
+    }
 
-    /* --- HEADER ROW --- */
     .header-row {
       display: flex;
       justify-content: space-between;
@@ -223,7 +261,10 @@
       align-items: center;
       gap: 5px;
     }
-    .back-link:hover { color: #5D4037; }
+
+    .back-link:hover { 
+      color: #5D4037; 
+    }
 
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(10px); }

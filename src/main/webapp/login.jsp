@@ -6,19 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ocean View Resort - Login</title>
     <style>
-        /* --- CSS VARIABLES (Theme Colors) --- */
         :root {
-            --bg-color: #F9F7F5;       /* Off-white background */
-            --card-bg: #FFFFFF;        /* Pure white card */
-            --primary-brown: #8D6E63;  /* Warm brown */
-            --dark-brown: #5D4037;     /* Darker brown for hover/text */
-            --text-color: #4E342E;     /* Dark text */
-            --border-color: #D7CCC8;   /* Light border */
-            --error-color: #D32F2F;    /* Red for errors */
-            --shadow: 0 8px 24px rgba(141, 110, 99, 0.15); /* Soft brown shadow */
+            --bg-color: #F9F7F5;       
+            --card-bg: #FFFFFF;        
+            --primary-brown: #8D6E63; 
+            --dark-brown: #5D4037;    
+            --text-color: #4E342E;   
+            --border-color: #D7CCC8; 
+            --error-color: #D32F2F;
+            --shadow: 0 8px 24px rgba(141, 110, 99, 0.15);
         }
 
-        /* --- GLOBAL STYLES --- */
         body {
             margin: 0;
             padding: 0;
@@ -28,16 +26,15 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100vh; /* Full viewport height */
+            min-height: 100vh;
         }
 
-        /* --- LOGIN CARD CONTAINER --- */
         .login-wrapper {
             width: 100%;
             max-width: 400px;
             padding: 20px;
             box-sizing: border-box;
-            animation: fadeIn 0.8s ease-out; /* Fade-in animation */
+            animation: fadeIn 0.8s ease-out; 
         }
 
         .box {
@@ -45,16 +42,15 @@
             padding: 40px 30px;
             border-radius: 12px;
             box-shadow: var(--shadow);
-            border-top: 5px solid var(--primary-brown); /* Brown accent top */
+            border-top: 5px solid var(--primary-brown); 
             text-align: center;
         }
 
-        /* --- TYPOGRAPHY --- */
         h2 {
             margin-top: 0;
             margin-bottom: 10px;
             color: var(--dark-brown);
-            font-family: 'Times New Roman', serif; /* Assignment requirement */
+            font-family: 'Times New Roman', serif;
             font-size: 28px;
             letter-spacing: 0.5px;
         }
@@ -65,7 +61,6 @@
             font-size: 14px;
         }
 
-        /* --- FORM ELEMENTS --- */
         label {
             display: block;
             text-align: left;
@@ -82,7 +77,7 @@
             margin-bottom: 20px;
             border: 1px solid var(--border-color);
             border-radius: 6px;
-            box-sizing: border-box; /* Ensures padding doesn't break width */
+            box-sizing: border-box;
             font-size: 15px;
             background-color: #FAFAFA;
             transition: all 0.3s ease;
@@ -95,7 +90,6 @@
             box-shadow: 0 0 0 3px rgba(141, 110, 99, 0.1);
         }
 
-        /* --- BUTTON STYLES --- */
         button {
             width: 100%;
             padding: 14px;
@@ -112,7 +106,7 @@
 
         button:hover {
             background-color: var(--dark-brown);
-            transform: translateY(-2px); /* Slight lift effect */
+            transform: translateY(-2px);
             box-shadow: 0 4px 12px rgba(93, 64, 55, 0.3);
         }
 
@@ -120,7 +114,6 @@
             transform: translateY(0);
         }
 
-        /* --- ERROR MESSAGE --- */
         .error {
             background-color: #FFEBEE;
             color: var(--error-color);
@@ -132,13 +125,11 @@
             text-align: left;
         }
 
-        /* --- ANIMATION KEYFRAMES --- */
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* --- RESPONSIVE ADJUSTMENTS --- */
         @media (max-width: 480px) {
             .box {
                 padding: 30px 20px;

@@ -18,7 +18,6 @@ public class ViewReservationServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
 
-        // receptionist only
         HttpSession session = req.getSession(false);
         if (session == null || session.getAttribute("role") == null ||
                 !"RECEPTIONIST".equalsIgnoreCase((String) session.getAttribute("role"))) {
@@ -33,7 +32,6 @@ public class ViewReservationServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
 
-        // receptionist only
         HttpSession session = req.getSession(false);
         if (session == null || session.getAttribute("role") == null ||
                 !"RECEPTIONIST".equalsIgnoreCase((String) session.getAttribute("role"))) {
@@ -75,7 +73,6 @@ public class ViewReservationServlet extends HttpServlet {
             return;
         }
 
-        // fallback
         resp.sendRedirect(req.getContextPath() + "/reservation/view");
     }
 }

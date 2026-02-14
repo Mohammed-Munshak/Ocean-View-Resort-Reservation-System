@@ -29,7 +29,6 @@ public class ReservationDAO {
 	        ps.setDate(7, java.sql.Date.valueOf(r.getCheckOut()));
 	        ps.setString(8, "ACTIVE");
 
-	        // if createdBy not available, allow null
 	        if (r.getCreatedBy() <= 0) {
 	            ps.setNull(9, java.sql.Types.INTEGER);
 	        } else {

@@ -2,14 +2,12 @@
 <%@ page import="java.util.List" %>
 <%@ page import="com.ovr.model.ReservationView" %>
 
-<%-- ✅ ADDED: DB imports for safe fallback revenue calculation --%>
 <%@ page import="com.ovr.util.DB" %>
 <%@ page import="java.sql.Connection" %>
 <%@ page import="java.sql.PreparedStatement" %>
 <%@ page import="java.sql.ResultSet" %>
 
 <%
-  // --- BACKEND LOGIC PRESERVED ---
   String role = (String) session.getAttribute("role");
   if (role == null || !"ADMIN".equalsIgnoreCase(role)) {
     response.sendRedirect(request.getContextPath() + "/login.jsp");
@@ -22,7 +20,6 @@
   Double revenue = (Double) request.getAttribute("revenue");
   String error = (String) request.getAttribute("error");
 
-  // ✅ ADDED: fallback calculation if servlet didn't set revenue
   if (revenue == null) {
     String fromDate = request.getParameter("fromDate");
     String toDate = request.getParameter("toDate");
@@ -49,7 +46,6 @@
 
     } catch (Exception ex) {
       ex.printStackTrace();
-      // keep your existing error display
       if (error == null) error = "Failed to calculate revenue.";
       revenue = 0.0;
     }
@@ -66,7 +62,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
   <style>
-    /* --- THEME --- */
     :root {
       --primary-gradient: linear-gradient(135deg, #8D6E63 0%, #6D4C41 100%);
       --bg-color: #F4F1EA;
@@ -94,7 +89,6 @@
       animation: fadeIn 0.6s ease-out;
     }
 
-    /* --- CONTROLS CARD (Hidden when printing) --- */
     .controls-card {
       background: var(--card-bg);
       padding: 25px;
@@ -139,13 +133,15 @@
       font-weight: 600;
       transition: transform 0.2s;
     }
-    .btn-generate:hover { transform: translateY(-2px); }
+    
+    .btn-generate:hover { 
+      transform: translateY(-2px); 
+    }
 
-    /* --- REPORT RESULTS SECTION --- */
     .report-sheet {
       background: white;
       padding: 40px;
-      border-radius: 8px; /* Sharp corners for paper look */
+      border-radius: 8px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.05);
     }
 
@@ -169,7 +165,6 @@
       margin-top: 5px;
     }
 
-    /* --- TABLE --- */
     table {
       width: 100%;
       border-collapse: collapse;
@@ -191,7 +186,6 @@
 
     tr:nth-child(even) { background-color: #FAF8F6; -webkit-print-color-adjust: exact; }
 
-    /* --- TOTAL REVENUE --- */
     .total-box {
       margin-top: 30px;
       text-align: right;
@@ -207,7 +201,6 @@
       color: #2E7D32;
     }
 
-    /* --- ACTION BUTTONS --- */
     .actions-row {
       display: flex;
       justify-content: flex-end;
@@ -234,13 +227,32 @@
       text-decoration: none;
     }
 
-    /* --- PRINT MODE (Magic happens here) --- */
     @media print {
-      body { background-color: white; padding: 0; }
-      .container { max-width: 100%; width: 100%; box-shadow: none; animation: none; }
-      .controls-card, .actions-row, .back-link, .alert { display: none !important; }
-      .report-sheet { box-shadow: none; padding: 0; border: none; }
-      h2 { color: black !important; }
+      body { 
+        background-color: white; 
+        padding: 0; 
+      }
+      
+      .container { 
+        max-width: 100%; 
+        width: 100%; 
+        box-shadow: none; 
+        animation: none; 
+      }
+      
+      .controls-card, .actions-row, .back-link, .alert { 
+        display: none !important; 
+      }
+      
+      .report-sheet { 
+        box-shadow: none; 
+        padding: 0; 
+        border: none; 
+      }
+      
+      h2 { 
+        color: black !important; 
+        }
     }
 
     @keyframes fadeIn {

@@ -19,7 +19,6 @@ public class UpdateReservationServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
 
-        // receptionist only
         HttpSession session = req.getSession(false);
         if (session == null || session.getAttribute("role") == null ||
                 !"RECEPTIONIST".equalsIgnoreCase((String) session.getAttribute("role"))) {
@@ -48,7 +47,6 @@ public class UpdateReservationServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
 
-        // receptionist only
         HttpSession session = req.getSession(false);
         if (session == null || session.getAttribute("role") == null ||
                 !"RECEPTIONIST".equalsIgnoreCase((String) session.getAttribute("role"))) {
@@ -63,7 +61,6 @@ public class UpdateReservationServlet extends HttpServlet {
         String checkIn = req.getParameter("checkIn");
         String checkOut = req.getParameter("checkOut");
 
-        // validation
         if (reservationNo == null || reservationNo.trim().isEmpty() ||
             guestName == null || guestName.trim().isEmpty() ||
             guestContact == null || guestContact.trim().isEmpty() ||

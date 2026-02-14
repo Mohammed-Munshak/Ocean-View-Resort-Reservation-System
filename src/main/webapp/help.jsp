@@ -1,7 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
 
 <%
-  // --- BACKEND LOGIC (PRESERVED FROM YOUR CODE) ---
   String role = (String) session.getAttribute("role");
   if (role == null) {
     response.sendRedirect(request.getContextPath() + "/login.jsp");
@@ -11,8 +10,8 @@
   boolean isAdmin = "ADMIN".equalsIgnoreCase(role);
   boolean isReceptionist = "RECEPTIONIST".equalsIgnoreCase(role);
 
-  String view = request.getParameter("view"); // admin can switch view
-  if (view == null) view = "self"; // default
+  String view = request.getParameter("view");
+  if (view == null) view = "self";
 %>
 
 <!DOCTYPE html>
@@ -25,7 +24,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
   <style>
-    /* --- THEME --- */
     :root {
       --primary-gradient: linear-gradient(135deg, #8D6E63 0%, #6D4C41 100%);
       --bg-color: #F4F1EA;
@@ -52,7 +50,6 @@
       animation: fadeIn 0.6s ease-out;
     }
 
-    /* --- HEADER --- */
     .header-section {
       text-align: center;
       margin-bottom: 30px;
@@ -65,7 +62,6 @@
       margin: 0 0 10px 0;
     }
 
-    /* --- NAVIGATION TABS --- */
     .nav-tabs {
       display: flex;
       justify-content: center;
@@ -90,7 +86,6 @@
       transform: translateY(-2px);
     }
 
-    /* Active Tab Style */
     .nav-link.active {
       background: var(--primary-gradient);
       color: white;
@@ -98,7 +93,6 @@
       box-shadow: 0 4px 10px rgba(141, 110, 99, 0.3);
     }
 
-    /* --- HELP CARD --- */
     .help-card {
       background: var(--card-bg);
       padding: 40px;
@@ -116,7 +110,6 @@
       margin-bottom: 20px;
     }
 
-    /* --- LIST STYLES --- */
     ol {
       padding-left: 20px;
     }
@@ -145,9 +138,8 @@
       position: relative;
     }
 
-    /* Custom bullet for inner lists */
     ul li::before {
-      content: "\f054"; /* FontAwesome Chevron */
+      content: "\f054";
       font-family: "Font Awesome 5 Free";
       font-weight: 900;
       font-size: 10px;
@@ -157,7 +149,6 @@
       top: 4px;
     }
 
-    /* --- CODE SNIPPET STYLE --- */
     code {
       background-color: var(--highlight-bg);
       color: #C62828;
@@ -168,7 +159,6 @@
       border: 1px solid #D7CCC8;
     }
 
-    /* --- TIP BOX --- */
     .tip-box {
       background-color: #E3F2FD;
       border-left: 4px solid #2196F3;
@@ -179,7 +169,6 @@
       font-size: 14px;
     }
 
-    /* --- FOOTER --- */
     .footer-action {
       margin-top: 30px;
       text-align: center;
@@ -194,7 +183,9 @@
       gap: 8px;
       transition: color 0.3s;
     }
-    .btn-back:hover { color: #5D4037; }
+    .btn-back:hover { 
+      color: #5D4037; 
+    }
 
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(10px); }

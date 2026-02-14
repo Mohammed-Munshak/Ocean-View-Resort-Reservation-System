@@ -3,7 +3,6 @@
 <%@ page import="com.ovr.model.ReservationView" %>
 
 <%
-  // --- BACKEND LOGIC PRESERVED ---
   String role = (String) session.getAttribute("role");
   if (role == null || !"RECEPTIONIST".equalsIgnoreCase(role)) {
     response.sendRedirect(request.getContextPath() + "/login.jsp");
@@ -23,7 +22,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
   <style>
-    /* --- THEME --- */
     :root {
       --primary-gradient: linear-gradient(135deg, #8D6E63 0%, #6D4C41 100%);
       --bg-color: #F4F1EA;
@@ -50,7 +48,6 @@
       animation: fadeIn 0.6s ease-out;
     }
 
-    /* --- CARD STYLE --- */
     .card {
       background: var(--card-bg);
       padding: 30px;
@@ -59,7 +56,6 @@
       border-top: 4px solid var(--table-header);
     }
 
-    /* --- HEADER ROW --- */
     .header-row {
       display: flex;
       justify-content: space-between;
@@ -85,9 +81,8 @@
     }
     .back-link:hover { color: #5D4037; }
 
-    /* --- TABLE STYLES --- */
     .table-responsive {
-      overflow-x: auto; /* Scroll horizontally on small screens */
+      overflow-x: auto;
     }
 
     table {
@@ -95,7 +90,7 @@
       border-collapse: collapse;
       margin-top: 10px;
       font-size: 14px;
-      white-space: nowrap; /* Prevents text wrapping awkwardly */
+      white-space: nowrap;
     }
 
     th {
@@ -114,10 +109,14 @@
       color: #555;
     }
 
-    tr:nth-child(even) { background-color: #FAF8F6; }
-    tr:hover { background-color: #F1EFE9; }
+    tr:nth-child(even) { 
+      background-color: #FAF8F6; 
+    }
+    
+    tr:hover { 
+      background-color: #F1EFE9; 
+    }
 
-    /* --- STATUS BADGES --- */
     .status-badge {
       padding: 5px 10px;
       border-radius: 12px;
@@ -125,11 +124,22 @@
       font-weight: bold;
       text-transform: uppercase;
     }
-    .status-active { background-color: #E8F5E9; color: #2E7D32; }
-    .status-cancelled { background-color: #FFEBEE; color: #C62828; }
-    .status-checked-out { background-color: #ECEFF1; color: #546E7A; }
 
-    /* --- VIEW BUTTON --- */
+    .status-active { 
+      background-color: #E8F5E9; 
+      color: #2E7D32; 
+    }
+    
+    .status-cancelled { 
+      background-color: #FFEBEE; 
+      color: #C62828; 
+    }
+    
+    .status-checked-out { 
+      background-color: #ECEFF1; 
+      color: #546E7A; 
+    }
+
     .btn-view {
       background-color: #8D6E63;
       color: white;
@@ -143,7 +153,10 @@
       gap: 5px;
       transition: background 0.2s;
     }
-    .btn-view:hover { background-color: #6D4C41; }
+    
+    .btn-view:hover { 
+      background-color: #6D4C41; 
+    }
 
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(10px); }

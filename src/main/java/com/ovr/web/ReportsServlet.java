@@ -32,8 +32,6 @@ public class ReportsServlet extends HttpServlet {
             throws ServletException, IOException {
 
         if (!adminOnly(req, resp)) return;
-
-        // Just open page (no results yet)
         req.getRequestDispatcher("/reports.jsp").forward(req, resp);
     }
 
@@ -52,7 +50,6 @@ public class ReportsServlet extends HttpServlet {
             return;
         }
 
-        // 1) Reservation list for the period (by check_in)
         List<ReservationView> reservations = new ArrayList<>();
 
         String sqlReservations =
@@ -64,7 +61,6 @@ public class ReportsServlet extends HttpServlet {
                 "WHERE res.check_in BETWEEN ? AND ? " +
                 "ORDER BY res.check_in DESC";
 
-        // 2) Revenue for the period (by bill generated_at date)
         String sqlRevenue =
                 "SELECT COALESCE(SUM(total_amount),0) AS revenue " +
                 "FROM bills " +
@@ -72,7 +68,6 @@ public class ReportsServlet extends HttpServlet {
 
         try (Connection con = DB.getConnection()) {
 
-            // reservations
             try (PreparedStatement ps = con.prepareStatement(sqlReservations)) {
                 ps.setString(1, fromDate);
                 ps.setString(2, toDate);
@@ -93,7 +88,6 @@ public class ReportsServlet extends HttpServlet {
                 }
             }
 
-            // revenue
             double revenue = 0.0;
             try (PreparedStatement ps = con.prepareStatement(sqlRevenue)) {
                 ps.setString(1, fromDate);

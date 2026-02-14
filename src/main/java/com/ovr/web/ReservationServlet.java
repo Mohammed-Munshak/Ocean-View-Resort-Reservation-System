@@ -38,8 +38,6 @@ public class ReservationServlet extends HttpServlet {
         String checkInStr = req.getParameter("checkIn");
         String checkOutStr = req.getParameter("checkOut");
         
-
-        // validation
         if (guestName.isEmpty() || guestContact.isEmpty()) {
             req.setAttribute("error", "Required fields missing.");
             req.getRequestDispatcher("/addReservation.jsp").forward(req, resp);

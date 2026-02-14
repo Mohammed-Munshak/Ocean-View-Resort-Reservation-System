@@ -36,7 +36,7 @@ public class ReservationController extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         if (!receptionistOnly(req, resp)) return;
 
-        String path = req.getPathInfo(); // /new, /list, /view
+        String path = req.getPathInfo();
         if (path == null) path = "/new";
 
         switch (path) {
@@ -63,14 +63,12 @@ public class ReservationController extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         if (!receptionistOnly(req, resp)) return;
 
-        String path = req.getPathInfo(); // /available, /add
+        String path = req.getPathInfo();
         if (path == null) path = "/new";
 
-        // always load room types for returning to addReservation.jsp
         req.setAttribute("roomTypes", roomTypeDAO.getActiveRoomTypes());
 
         if ("/available".equals(path)) {
-            // Step 1: check availability
             String roomTypeIdStr = req.getParameter("roomTypeId");
             String checkIn = req.getParameter("checkIn");
             String checkOut = req.getParameter("checkOut");
@@ -93,7 +91,6 @@ public class ReservationController extends HttpServlet {
         }
 
         if ("/add".equals(path)) {
-            // Step 2: create reservation
             HttpSession session = req.getSession(false);
             int createdBy = (int) session.getAttribute("userId");
 

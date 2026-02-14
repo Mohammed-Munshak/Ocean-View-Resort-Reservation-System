@@ -17,7 +17,6 @@ public class ManageRoomTypesServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
 
-        // admin only
         HttpSession session = req.getSession(false);
         if (session == null || session.getAttribute("role") == null ||
                 !"ADMIN".equalsIgnoreCase((String) session.getAttribute("role"))) {
@@ -33,7 +32,6 @@ public class ManageRoomTypesServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
 
-        // admin only
         HttpSession session = req.getSession(false);
         if (session == null || session.getAttribute("role") == null ||
                 !"ADMIN".equalsIgnoreCase((String) session.getAttribute("role"))) {
@@ -79,7 +77,6 @@ public class ManageRoomTypesServlet extends HttpServlet {
             }
         }
 
-        // reload list
         req.setAttribute("roomTypes", roomTypeDAO.getAllRoomTypes());
         req.getRequestDispatcher("/manageRoomTypes.jsp").forward(req, resp);
     }

@@ -3,10 +3,10 @@ package com.ovr.model;
 public class Room {
     private int roomId;
     private String roomNumber;
-    private String status;      // AVAILABLE / MAINTENANCE
+    private String status; 
     private int roomTypeId;
     private String roomTypeName;
-    private int isActive;       // 1 active, 0 removed
+    private int isActive;  
 
     public int getRoomId() { return roomId; }
     public void setRoomId(int roomId) { this.roomId = roomId; }

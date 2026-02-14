@@ -3,7 +3,6 @@
 <%@ page import="com.ovr.model.Bill" %>
 
 <%
-  // --- BACKEND LOGIC PRESERVED ---
   String role = (String) session.getAttribute("role");
   if (role == null || !"RECEPTIONIST".equalsIgnoreCase(role)) {
     response.sendRedirect(request.getContextPath() + "/login.jsp");
@@ -24,7 +23,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
   <style>
-    /* --- THEME & PRINT SETTINGS --- */
     :root {
       --bg-color: #F4F1EA;
       --card-bg: #FFFFFF;
@@ -44,7 +42,6 @@
       justify-content: center;
     }
 
-    /* --- INVOICE PAPER --- */
     .invoice-card {
       background: var(--card-bg);
       width: 100%;
@@ -54,7 +51,6 @@
       border-radius: 4px;
     }
 
-    /* --- HEADER --- */
     .invoice-header {
       text-align: center;
       border-bottom: 2px solid var(--primary-brown);
@@ -89,7 +85,6 @@
       width: 100px;
     }
 
-    /* --- INFO SECTIONS --- */
     .info-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -112,7 +107,6 @@
       font-size: 15px;
     }
 
-    /* --- COST TABLE (Fixed Alignment) --- */
     .cost-table {
       width: 100%;
       border-collapse: collapse;
@@ -151,7 +145,6 @@
       padding-bottom: 15px;
     }
 
-    /* --- BUTTONS --- */
     .action-buttons {
       margin-top: 40px;
       text-align: center;
@@ -160,7 +153,6 @@
       gap: 15px;
     }
 
-    /* Common Button Style */
     button, .btn-link, .btn-new {
       padding: 12px 20px;
       border-radius: 5px;
@@ -187,9 +179,11 @@
       border: 1px solid var(--primary-brown);
       color: var(--primary-brown);
     }
-    .btn-new:hover { background-color: #FAF8F6; }
     
-    /* Ghost button for 'Back' */
+    .btn-new:hover { 
+    background-color: #FAF8F6; 
+    }
+    
     .btn-ghost {
       background-color: transparent;
       border: 1px solid transparent;
@@ -200,7 +194,6 @@
        color: #555;
     }
 
-    /* --- PRINT STYLES --- */
     @media print {
       body { background-color: white; padding: 0; }
       .invoice-card { box-shadow: none; padding: 0; max-width: 100%; border: none; }

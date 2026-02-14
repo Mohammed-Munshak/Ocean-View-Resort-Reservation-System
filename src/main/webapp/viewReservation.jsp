@@ -2,7 +2,6 @@
 <%@ page import="com.ovr.model.ReservationView" %>
 
 <%
-  // --- BACKEND LOGIC PRESERVED ---
   String role = (String) session.getAttribute("role");
   if (role == null || !"RECEPTIONIST".equalsIgnoreCase(role)) {
     response.sendRedirect(request.getContextPath() + "/login.jsp");
@@ -24,7 +23,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
   <style>
-    /* --- THEME --- */
     :root {
       --primary-gradient: linear-gradient(135deg, #8D6E63 0%, #6D4C41 100%);
       --bg-color: #F4F1EA;
@@ -52,7 +50,6 @@
       animation: fadeIn 0.6s ease-out;
     }
 
-    /* --- SEARCH CARD --- */
     .search-card {
       background: var(--card-bg);
       padding: 30px;
@@ -96,7 +93,6 @@
     }
     .btn-search:hover { transform: translateY(-2px); }
 
-    /* --- ALERTS --- */
     .alert {
       padding: 15px;
       border-radius: 6px;
@@ -106,10 +102,19 @@
       align-items: center;
       gap: 10px;
     }
-    .alert-success { background-color: #E8F5E9; color: var(--active-color); border: 1px solid #C8E6C9; }
-    .alert-error { background-color: #FFEBEE; color: var(--cancel-color); border: 1px solid #FFCDD2; }
+    
+    .alert-success { 
+      background-color: #E8F5E9; 
+      color: var(--active-color); 
+      border: 1px solid #C8E6C9; 
+    }
+    
+    .alert-error { 
+      background-color: #FFEBEE; 
+      color: var(--cancel-color); 
+      border: 1px solid #FFCDD2; 
+    }
 
-    /* --- DETAILS CARD --- */
     .details-card {
       background: var(--card-bg);
       border-radius: 12px;
@@ -140,8 +145,16 @@
       font-weight: bold;
       text-transform: uppercase;
     }
-    .status-active { background-color: #E8F5E9; color: #2E7D32; }
-    .status-other { background-color: #FFEBEE; color: #C62828; }
+
+    .status-active { 
+      background-color: #E8F5E9; 
+      color: #2E7D32; 
+    }
+    
+    .status-other { 
+      background-color: #FFEBEE; 
+      color: #C62828; 
+    }
 
     .details-body {
       padding: 30px;
@@ -164,18 +177,19 @@
       margin-bottom: 10px;
       font-size: 14px;
     }
+    
     .info-label {
       width: 100px;
       color: #999;
       font-weight: 500;
     }
+    
     .info-value {
       flex: 1;
       color: #3E2723;
       font-weight: 600;
     }
 
-    /* --- ACTION BUTTONS --- */
     .actions-footer {
       padding: 20px 30px;
       background-color: #FAF8F6;
@@ -198,7 +212,10 @@
       gap: 5px;
       transition: background 0.3s;
     }
-    .btn-update:hover { background-color: #6D4C41; }
+
+    .btn-update:hover { 
+      background-color: #6D4C41; 
+    }
 
     .btn-cancel {
       background-color: white;
@@ -214,7 +231,10 @@
       gap: 5px;
       transition: all 0.3s;
     }
-    .btn-cancel:hover { background-color: #FFEBEE; }
+    
+    .btn-cancel:hover { 
+      background-color: #FFEBEE; 
+    }
 
     .back-link {
       display: inline-block;
@@ -223,12 +243,14 @@
       text-decoration: none;
       font-weight: 600;
     }
-    .back-link:hover { color: #5D4037; }
+    
+    .back-link:hover { 
+      color: #5D4037; 
+    }
 
     @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
     @keyframes slideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
 
-    /* Mobile Responsive */
     @media (max-width: 600px) {
       .details-body { grid-template-columns: 1fr; gap: 20px; }
       .search-form { flex-direction: column; }

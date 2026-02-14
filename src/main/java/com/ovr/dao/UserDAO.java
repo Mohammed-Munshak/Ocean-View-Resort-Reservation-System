@@ -11,7 +11,6 @@ import java.sql.ResultSet;
 
 public class UserDAO {
 
-    // ✅ matches your sequence diagram: SELECT user by username and active=1
     public User findActiveByUsername(String username) {
         String sql = "SELECT user_id, username, password_hash, role, full_name, contact_no, is_active " +
                      "FROM users WHERE username = ? AND is_active = 1";
@@ -76,7 +75,7 @@ public class UserDAO {
             }
         } catch (Exception e) {
             e.printStackTrace();
-            return true; // safe default
+            return true;
         }
     }
 
@@ -88,7 +87,7 @@ public class UserDAO {
              PreparedStatement ps = con.prepareStatement(sql)) {
 
             ps.setString(1, username);
-            ps.setString(2, passwordPlain); // plain text for now (same as your existing users)
+            ps.setString(2, passwordPlain);
             ps.setString(3, fullName);
             ps.setString(4, contactNo);
 

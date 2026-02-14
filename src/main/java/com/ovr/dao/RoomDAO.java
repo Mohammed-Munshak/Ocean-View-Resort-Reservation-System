@@ -38,8 +38,6 @@ public class RoomDAO {
         return null;
     }
 
-    // --- Admin methods below ---
-
     public List<Room> getAllRooms() {
         List<Room> list = new ArrayList<>();
 

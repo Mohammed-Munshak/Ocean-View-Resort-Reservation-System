@@ -79,7 +79,6 @@ public class ManageRoomsServlet extends HttpServlet {
             }
         }
 
-        // reload page data
         req.setAttribute("rooms", roomDAO.getAllRooms());
         req.setAttribute("roomTypes", roomTypeDAO.getAllRoomTypes());
         req.getRequestDispatcher("/manageRooms.jsp").forward(req, resp);

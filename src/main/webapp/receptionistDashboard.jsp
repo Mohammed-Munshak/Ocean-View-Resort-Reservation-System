@@ -1,6 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%
-  // --- BACKEND LOGIC (DO NOT CHANGE) ---
   String role = (String) session.getAttribute("role");
   if (role == null || !"RECEPTIONIST".equalsIgnoreCase(role)) {
     response.sendRedirect(request.getContextPath() + "/login.jsp");
@@ -17,10 +16,9 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
   <style>
-    /* --- UNIFIED LUXURY THEME --- */
     :root {
       --primary-gradient: linear-gradient(135deg, #8D6E63 0%, #6D4C41 100%);
-      --bg-color: #F4F1EA;       /* Warm Sand */
+      --bg-color: #F4F1EA;
       --card-bg: #FFFFFF;
       --text-main: #3E2723;
       --text-light: #795548;
@@ -36,7 +34,6 @@
       color: var(--text-main);
     }
 
-    /* --- HERO HEADER --- */
     .header {
       background: var(--primary-gradient);
       padding: 20px 40px;
@@ -71,9 +68,11 @@
       font-weight: 600;
       transition: opacity 0.3s;
     }
-    .logout-btn:hover { opacity: 0.8; }
 
-    /* --- MAIN CONTENT --- */
+    .logout-btn:hover { 
+      opacity: 0.8; 
+    }
+
     .container {
       max-width: 1100px;
       margin: 50px auto;
@@ -94,7 +93,6 @@
       font-size: 16px;
     }
 
-    /* --- DASHBOARD GRID --- */
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -120,7 +118,6 @@
       box-shadow: var(--hover-shadow);
     }
 
-    /* Decorative Circle */
     .card::before {
       content: '';
       position: absolute;
@@ -133,7 +130,10 @@
       opacity: 0.5;
       transition: 0.5s;
     }
-    .card:hover::before { transform: scale(1.5); }
+    
+    .card:hover::before { 
+      transform: scale(1.5); 
+    }
 
     .card i {
       font-size: 42px;

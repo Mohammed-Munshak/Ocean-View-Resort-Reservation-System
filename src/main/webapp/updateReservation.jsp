@@ -2,7 +2,6 @@
 <%@ page import="com.ovr.model.ReservationView" %>
 
 <%
-  // --- BACKEND LOGIC PRESERVED ---
   String role = (String) session.getAttribute("role");
   if (role == null || !"RECEPTIONIST".equalsIgnoreCase(role)) {
     response.sendRedirect(request.getContextPath() + "/login.jsp");
@@ -24,7 +23,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
   <style>
-    /* --- THEME --- */
     :root {
       --primary-gradient: linear-gradient(135deg, #8D6E63 0%, #6D4C41 100%);
       --bg-color: #F4F1EA;
@@ -59,7 +57,6 @@
       border-top: 5px solid #8D6E63;
     }
 
-    /* --- HEADER --- */
     .header-row {
       display: flex;
       justify-content: space-between;
@@ -76,7 +73,6 @@
       color: var(--text-main);
     }
 
-    /* --- SUMMARY BOX (Static Info) --- */
     .summary-box {
       background-color: var(--read-only-bg);
       padding: 20px;
@@ -105,7 +101,6 @@
       color: #3E2723;
     }
 
-    /* --- FORM STYLES --- */
     .form-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -157,7 +152,6 @@
     }
     .btn-update:hover { transform: translateY(-2px); }
 
-    /* --- ALERTS --- */
     .alert {
       padding: 15px;
       border-radius: 6px;
@@ -167,8 +161,18 @@
       align-items: center;
       gap: 10px;
     }
-    .alert-success { background-color: #E8F5E9; color: #2E7D32; border: 1px solid #C8E6C9; }
-    .alert-error { background-color: #FFEBEE; color: #C62828; border: 1px solid #FFCDD2; }
+    
+    .alert-success { 
+      background-color: #E8F5E9; 
+      color: #2E7D32; 
+      border: 1px solid #C8E6C9; 
+    }
+    
+    .alert-error { 
+      background-color: #FFEBEE; 
+      color: #C62828; 
+      border: 1px solid #FFCDD2; 
+    }
 
     .back-link {
       color: #8D6E63;
@@ -178,7 +182,10 @@
       align-items: center;
       gap: 5px;
     }
-    .back-link:hover { color: #3E2723; }
+    
+    .back-link:hover { 
+      color: #3E2723; 
+    }
 
     @keyframes slideUp {
       from { opacity: 0; transform: translateY(20px); }

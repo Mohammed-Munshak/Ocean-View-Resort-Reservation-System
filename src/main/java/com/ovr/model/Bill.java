@@ -29,7 +29,6 @@ public class Bill {
     public LocalDateTime getGeneratedAt() { return generatedAt; }
     public void setGeneratedAt(LocalDateTime timestamp) { this.generatedAt = timestamp; }
 	public void setGeneratedAt(Timestamp timestamp) {
-		// TODO Auto-generated method stub
 		
 	}
 }

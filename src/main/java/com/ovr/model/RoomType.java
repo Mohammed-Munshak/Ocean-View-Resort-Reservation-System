@@ -5,7 +5,7 @@ public class RoomType {
     private String typeName;
     private double ratePerNight;
     private String description;
-    private int isActive; // 1 or 0
+    private int isActive;
 
     public int getRoomTypeId() { return roomTypeId; }
     public void setRoomTypeId(int roomTypeId) { this.roomTypeId = roomTypeId; }

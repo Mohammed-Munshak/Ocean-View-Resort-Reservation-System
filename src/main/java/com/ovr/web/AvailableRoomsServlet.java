@@ -30,7 +30,6 @@ public class AvailableRoomsServlet extends HttpServlet {
         String checkIn = req.getParameter("checkIn");
         String checkOut = req.getParameter("checkOut");
 
-        // always reload room types for dropdown
         req.setAttribute("roomTypes", roomTypeDAO.getActiveRoomTypes());
 
         if (roomTypeIdStr != null && checkIn != null && checkOut != null &&

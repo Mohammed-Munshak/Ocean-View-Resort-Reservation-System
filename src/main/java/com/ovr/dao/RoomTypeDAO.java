@@ -102,8 +102,8 @@ public class RoomTypeDAO {
                 rt.setRoomTypeId(rs.getInt("room_type_id"));
                 rt.setTypeName(rs.getString("type_name"));
                 rt.setRatePerNight(rs.getDouble("rate_per_night"));
-                rt.setDescription(rs.getString("description"));   // ✅ this line fixes null
-                rt.setIsActive(rs.getInt("is_active"));           // ✅ needed for activate/deactivate
+                rt.setDescription(rs.getString("description"));
+                rt.setIsActive(rs.getInt("is_active"));    
                 list.add(rt);
             }
 

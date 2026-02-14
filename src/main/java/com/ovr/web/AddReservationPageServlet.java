@@ -17,7 +17,6 @@ public class AddReservationPageServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
 
-        // session protection (only receptionist)
         HttpSession session = req.getSession(false);
         if (session == null || session.getAttribute("role") == null ||
                 !"RECEPTIONIST".equalsIgnoreCase((String) session.getAttribute("role"))) {

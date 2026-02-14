@@ -3,7 +3,6 @@
 <%@ page import="com.ovr.model.User" %>
 
 <%
-  // --- BACKEND LOGIC PRESERVED ---
   String role = (String) session.getAttribute("role");
   if (role == null || !"ADMIN".equalsIgnoreCase(role)) {
     response.sendRedirect(request.getContextPath() + "/login.jsp");
@@ -25,7 +24,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
   <style>
-    /* --- THEME --- */
     :root {
       --primary-gradient: linear-gradient(135deg, #8D6E63 0%, #6D4C41 100%);
       --bg-color: #F4F1EA;
@@ -60,7 +58,6 @@
       margin-top: 0;
     }
 
-    /* --- CARDS --- */
     .card {
       background: var(--card-bg);
       padding: 30px;
@@ -70,7 +67,6 @@
       border-top: 4px solid var(--table-header);
     }
 
-    /* --- ALERTS --- */
     .alert {
       padding: 15px;
       border-radius: 6px;
@@ -80,15 +76,34 @@
       align-items: center;
       gap: 10px;
     }
-    .alert-success { background-color: #E8F5E9; color: var(--success-color); border: 1px solid #C8E6C9; }
-    .alert-error { background-color: #FFEBEE; color: var(--error-color); border: 1px solid #FFCDD2; }
+    
+    .alert-success { 
+      background-color: #E8F5E9; 
+      color: var(--success-color); 
+      border: 1px solid #C8E6C9; 
+    }
+    
+    .alert-error { 
+      background-color: #FFEBEE; 
+      color: var(--error-color); 
+      border: 1px solid #FFCDD2; 
+    }
 
-    /* --- ADD FORM --- */
     .form-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 20px;
-      align-items: end;
+      align-items: start; /* Changed from end to start to accommodate text below inputs */
+    }
+
+    /* SPECIFIC CSS FOR THE CONTACT NO HELPER TEXT */
+    .form-grid p {
+      margin: 6px 0 0 0;
+      font-size: 11px;
+      color: #8D6E63;
+      font-style: italic;
+      font-weight: 500;
+      line-height: 1.2;
     }
 
     label {
@@ -119,10 +134,13 @@
       font-weight: 600;
       width: 100%;
       transition: transform 0.2s;
+      margin-top: 25px; /* Aligns button with the row height */
     }
-    .btn-add:hover { transform: translateY(-2px); }
 
-    /* --- TABLE STYLES --- */
+    .btn-add:hover { 
+      transform: translateY(-2px); 
+    }
+
     .table-responsive {
       overflow-x: auto;
     }
@@ -148,20 +166,31 @@
       color: #555;
     }
 
-    tr:nth-child(even) { background-color: #FAF8F6; }
-    tr:hover { background-color: #F1EFE9; }
+    tr:nth-child(even) { 
+      background-color: #FAF8F6; 
+    }
+    
+    tr:hover { 
+      background-color: #F1EFE9; 
+    }
 
-    /* --- STATUS BADGES --- */
     .status-badge {
       padding: 4px 10px;
       border-radius: 12px;
       font-size: 12px;
       font-weight: bold;
     }
-    .status-active { background-color: #E8F5E9; color: #2E7D32; }
-    .status-inactive { background-color: #FFEBEE; color: #C62828; }
 
-    /* --- ACTION BUTTONS --- */
+    .status-active { 
+      background-color: #E8F5E9; 
+      color: #2E7D32; 
+    }
+
+    .status-inactive { 
+      background-color: #FFEBEE; 
+      color: #C62828; 
+    }
+
     .btn-action {
       padding: 6px 12px;
       border: none;
@@ -177,16 +206,23 @@
       color: #C62828;
       border: 1px solid #FFCDD2;
     }
-    .btn-deactivate:hover { background-color: #C62828; color: white; }
+
+    .btn-deactivate:hover { 
+      background-color: #C62828; 
+      color: white; 
+    }
 
     .btn-activate {
       background-color: #E8F5E9;
       color: #2E7D32;
       border: 1px solid #C8E6C9;
     }
-    .btn-activate:hover { background-color: #2E7D32; color: white; }
+    
+    .btn-activate:hover { 
+      background-color: #2E7D32; 
+      color: white; 
+    }
 
-    /* --- HEADER ROW --- */
     .header-row {
       display: flex;
       justify-content: space-between;
@@ -202,7 +238,10 @@
       align-items: center;
       gap: 5px;
     }
-    .back-link:hover { color: #5D4037; }
+
+    .back-link:hover { 
+      color: #5D4037; 
+    }
 
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(10px); }
@@ -250,6 +289,7 @@
         <div>
           <label>Contact No</label>
           <input type="text" name="contactNo" placeholder="Phone Number" />
+          <p>Number should be saved as 947XXXXXXXX</p>
         </div>
         <div>
           <button type="submit" class="btn-add">

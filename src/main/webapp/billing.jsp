@@ -1,7 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
 
 <%
-  // --- BACKEND LOGIC PRESERVED ---
   String role = (String) session.getAttribute("role");
   if (role == null || !"RECEPTIONIST".equalsIgnoreCase(role)) {
     response.sendRedirect(request.getContextPath() + "/login.jsp");
@@ -19,7 +18,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
   <style>
-    /* --- THEME --- */
     :root {
       --primary-gradient: linear-gradient(135deg, #8D6E63 0%, #6D4C41 100%);
       --bg-color: #F4F1EA;
@@ -41,7 +39,6 @@
       min-height: 100vh;
     }
 
-    /* --- CENTERED CARD --- */
     .card {
       background: var(--card-bg);
       width: 100%;
@@ -68,7 +65,6 @@
       margin-bottom: 30px;
     }
 
-    /* --- FORM ELEMENTS --- */
     .form-group {
       text-align: left;
       margin-bottom: 20px;
@@ -113,7 +109,6 @@
       box-shadow: 0 0 0 3px rgba(141, 110, 99, 0.1);
     }
 
-    /* --- BUTTON --- */
     .btn-generate {
       width: 100%;
       padding: 12px;
@@ -132,7 +127,6 @@
       box-shadow: 0 5px 15px rgba(109, 76, 65, 0.3);
     }
 
-    /* --- ALERTS --- */
     .alert-error {
       background-color: var(--error-bg);
       color: var(--error-text);
@@ -147,7 +141,6 @@
       gap: 10px;
     }
 
-    /* --- BACK LINK --- */
     .back-link {
       display: inline-block;
       margin-top: 20px;
@@ -156,7 +149,9 @@
       font-size: 14px;
       transition: color 0.3s;
     }
-    .back-link:hover { color: #3E2723; }
+    .back-link:hover { 
+      color: #3E2723; 
+    }
 
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(10px); }

@@ -3,8 +3,8 @@ package com.ovr.model;
 public class User {
     private int userId;
     private String username;
-    private String passwordHash;   // currently plain text in your DB
-    private String role;           // ADMIN or RECEPTIONIST
+    private String passwordHash;  
+    private String role;        
     private String fullName;
     private String contactNo;
     private boolean isActive;
@@ -29,4 +29,6 @@ public class User {
 
     public boolean isActive() { return isActive; }
     public void setActive(boolean active) { isActive = active; }
+    
+    
 }

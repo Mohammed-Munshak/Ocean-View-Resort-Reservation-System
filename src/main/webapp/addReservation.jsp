@@ -4,7 +4,6 @@
 <%@ page import="com.ovr.model.Room" %>
 
 <%
-  // --- BACKEND LOGIC PRESERVED ---
   String role = (String) session.getAttribute("role");
   if (role == null || !"RECEPTIONIST".equalsIgnoreCase(role)) {
     response.sendRedirect(request.getContextPath() + "/login.jsp");
@@ -17,7 +16,6 @@
   String error = (String) request.getAttribute("error");
   String success = (String) request.getAttribute("success");
 
-  // Type casting explicitly to avoid JSP compilation errors on some servers
   Integer selectedRoomTypeId = (Integer) request.getAttribute("selectedRoomTypeId");
   String selectedCheckIn = (String) request.getAttribute("selectedCheckIn");
   String selectedCheckOut = (String) request.getAttribute("selectedCheckOut");
@@ -33,7 +31,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
   <style>
-    /* --- THEME --- */
     :root {
       --primary-gradient: linear-gradient(135deg, #8D6E63 0%, #6D4C41 100%);
       --bg-color: #F4F1EA;
@@ -60,7 +57,6 @@
       animation: fadeIn 0.6s ease-out;
     }
 
-    /* --- CARDS --- */
     .card {
       background: var(--card-bg);
       border-radius: 12px;
@@ -70,7 +66,6 @@
       border-top: 4px solid #8D6E63;
     }
 
-    /* --- HEADERS --- */
     .header-row {
       display: flex;
       justify-content: space-between;
@@ -94,7 +89,6 @@
       margin-bottom: 20px;
     }
 
-    /* --- FORM ELEMENTS --- */
     .search-grid {
       display: grid;
       grid-template-columns: 2fr 1fr 1fr auto;
@@ -108,7 +102,10 @@
       gap: 20px;
     }
 
-    .full-width { grid-column: span 2; }
+    .full-width { 
+      grid-column: span 2; 
+     
+    }
 
     label {
       display: block;
@@ -137,7 +134,6 @@
       box-shadow: 0 0 0 3px rgba(141, 110, 99, 0.1);
     }
 
-    /* --- BUTTONS --- */
     .btn-check {
       background-color: #5D4037;
       color: white;
@@ -149,7 +145,10 @@
       transition: background 0.3s;
       height: 44px; /* Align with inputs */
     }
-    .btn-check:hover { background-color: #3E2723; }
+
+    .btn-check:hover { 
+      background-color: #3E2723; 
+    }
 
     .btn-submit {
       width: 100%;
@@ -164,9 +163,11 @@
       margin-top: 10px;
       transition: transform 0.2s;
     }
-    .btn-submit:hover { transform: translateY(-2px); }
+    
+    .btn-submit:hover { 
+      transform: translateY(-2px); 
+    }
 
-    /* --- ALERTS --- */
     .alert {
       padding: 15px;
       border-radius: 6px;
@@ -176,8 +177,18 @@
       gap: 10px;
       font-size: 14px;
     }
-    .alert-error { background-color: #FFEBEE; color: #C62828; border: 1px solid #FFCDD2; }
-    .alert-success { background-color: #E8F5E9; color: #2E7D32; border: 1px solid #C8E6C9; }
+
+    .alert-error { 
+      background-color: #FFEBEE; 
+      color: #C62828; 
+      border: 1px solid #FFCDD2; 
+    }
+    
+    .alert-success { 
+      background-color: #E8F5E9; 
+      color: #2E7D32; 
+      border: 1px solid #C8E6C9; 
+    }
 
     .back-link {
       text-decoration: none;
@@ -187,18 +198,36 @@
       align-items: center;
       gap: 5px;
     }
-    .back-link:hover { color: #5D4037; }
-
-    /* --- ANIMATION --- */
-    @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-
-    /* --- RESPONSIVE --- */
-    @media (max-width: 768px) {
-      .search-grid { grid-template-columns: 1fr; }
-      .form-grid { grid-template-columns: 1fr; }
-      .full-width { grid-column: span 1; }
-      .btn-check { width: 100%; }
+    
+    .back-link:hover { 
+      color: #5D4037; 
     }
+
+    @keyframes fadeIn { from { 
+      opacity: 0; 
+      transform: translateY(10px); 
+    } to { 
+      opacity: 1; 
+      transform: translateY(0); 
+    } }
+
+    @media (max-width: 768px) {
+      .search-grid { 
+      grid-template-columns: 1fr; 
+     }
+     
+      .form-grid { 
+      grid-template-columns: 1fr; 
+     }
+     
+      .full-width { 
+      grid-column: span 1; 
+     }
+     
+      .btn-check { 
+      width: 100%; 
+     }
+   }
   </style>
 </head>
 <body>
