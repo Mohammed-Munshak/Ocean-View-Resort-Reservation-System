@@ -30,14 +30,14 @@ public class LoginServlet extends HttpServlet {
         if (username == null || username.trim().isEmpty() ||
             password == null || password.trim().isEmpty()) {
             req.setAttribute("error", "Username and password are required.");
-            req.getRequestDispatcher("/login.jsp").forward(req, resp);
+            req.getRequestDispatcher("/Views/login.jsp").forward(req, resp);
             return;
         }
 
         User user = userDAO.findActiveByUsername(username.trim());
         if (user == null || !password.equals(user.getPasswordHash())) {
             req.setAttribute("error", "Invalid username or password.");
-            req.getRequestDispatcher("/login.jsp").forward(req, resp);
+            req.getRequestDispatcher("/Views/login.jsp").forward(req, resp);
             return;
         }
         
@@ -62,13 +62,13 @@ public class LoginServlet extends HttpServlet {
         }
 
         if ("ADMIN".equalsIgnoreCase(user.getRole())) {
-            resp.sendRedirect(req.getContextPath() + "/adminDashboard.jsp");
+            resp.sendRedirect(req.getContextPath() + "/Views/adminDashboard.jsp");
         } else if ("RECEPTIONIST".equalsIgnoreCase(user.getRole())) {
-            resp.sendRedirect(req.getContextPath() + "/receptionistDashboard.jsp");
+            resp.sendRedirect(req.getContextPath() + "/Views/receptionistDashboard.jsp");
         } else {
             session.invalidate();
             req.setAttribute("error", "User role not recognized.");
-            req.getRequestDispatcher("/login.jsp").forward(req, resp);
+            req.getRequestDispatcher("/Views/login.jsp").forward(req, resp);
         }
     }
 

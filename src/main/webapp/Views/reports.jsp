@@ -10,7 +10,7 @@
 <%
   String role = (String) session.getAttribute("role");
   if (role == null || !"ADMIN".equalsIgnoreCase(role)) {
-    response.sendRedirect(request.getContextPath() + "/login.jsp");
+    response.sendRedirect(request.getContextPath() + "/Views/login.jsp");
     return;
   }
 
@@ -677,7 +677,6 @@
       color: var(--white);
     }
 
-    /* Focus styles for accessibility */
     *:focus-visible {
       outline: 2px solid var(--turquoise);
       outline-offset: 2px;
@@ -693,7 +692,7 @@
 <div class="container">
 
   <div class="actions-row">
-    <a href="<%= request.getContextPath() %>/adminDashboard.jsp" class="back-link">
+    <a href="<%= request.getContextPath() %>/Views/adminDashboard.jsp" class="back-link">
       <i class="fas fa-arrow-left"></i> Back to Dashboard
     </a>
   </div>

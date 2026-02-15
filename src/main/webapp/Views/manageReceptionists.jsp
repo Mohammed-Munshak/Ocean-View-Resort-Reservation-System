@@ -5,7 +5,7 @@
 <%
   String role = (String) session.getAttribute("role");
   if (role == null || !"ADMIN".equalsIgnoreCase(role)) {
-    response.sendRedirect(request.getContextPath() + "/login.jsp");
+    response.sendRedirect(request.getContextPath() + "/Views/login.jsp");
     return;
   }
 
@@ -739,7 +739,7 @@
         <i class="fas fa-users-cog"></i>
         <span>Manage Receptionists</span>
       </div>
-      <a href="<%= request.getContextPath() %>/adminDashboard.jsp" class="back-link">
+      <a href="<%= request.getContextPath() %>/Views/adminDashboard.jsp" class="back-link">
         <i class="fas fa-arrow-left"></i> Back to Dashboard
       </a>
     </div>
@@ -800,7 +800,7 @@
               Contact No
             </label>
             <input type="text" name="contactNo" class="form-input" placeholder="Enter contact number" />
-            <span class="form-helper">Optional: Staff contact information</span>
+            <span class="form-helper">Optional: Staff contact information for Verification</span>
           </div>
         </div>
 

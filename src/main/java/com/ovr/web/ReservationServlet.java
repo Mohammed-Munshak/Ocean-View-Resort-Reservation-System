@@ -31,7 +31,7 @@ public class ReservationServlet extends HttpServlet {
         HttpSession session = req.getSession(false);
         if (session == null || session.getAttribute("role") == null ||
                 !"RECEPTIONIST".equalsIgnoreCase((String) session.getAttribute("role"))) {
-            resp.sendRedirect(req.getContextPath() + "/login.jsp");
+            resp.sendRedirect(req.getContextPath() + "/Views/login.jsp");
             return;
         }
         Integer userIdObj = (Integer) session.getAttribute("userId");
@@ -50,7 +50,7 @@ public class ReservationServlet extends HttpServlet {
             
             req.setAttribute("error", "Required fields missing.");
             req.setAttribute("roomTypes", roomTypeDAO.getActiveRoomTypes());
-            req.getRequestDispatcher("/addReservation.jsp").forward(req, resp);
+            req.getRequestDispatcher("/Views/addReservation.jsp").forward(req, resp);
             return;
         }
 
@@ -61,7 +61,7 @@ public class ReservationServlet extends HttpServlet {
         if (!checkOut.isAfter(checkIn)) {
             req.setAttribute("error", "Check-out must be after check-in.");
             req.setAttribute("roomTypes", roomTypeDAO.getActiveRoomTypes());
-            req.getRequestDispatcher("/addReservation.jsp").forward(req, resp);
+            req.getRequestDispatcher("/Views/addReservation.jsp").forward(req, resp);
             return;
         }
         
@@ -77,7 +77,7 @@ public class ReservationServlet extends HttpServlet {
         if (roomId == null) {
             req.setAttribute("error", "No rooms available for selected dates.");
             req.setAttribute("roomTypes", roomTypeDAO.getActiveRoomTypes());
-            req.getRequestDispatcher("/addReservation.jsp").forward(req, resp);
+            req.getRequestDispatcher("/Views/addReservation.jsp").forward(req, resp);
             return;
         }
 
@@ -113,7 +113,7 @@ public class ReservationServlet extends HttpServlet {
         }
 
         req.setAttribute("roomTypes", roomTypeDAO.getActiveRoomTypes());
-        req.getRequestDispatcher("/addReservation.jsp").forward(req, resp);
+        req.getRequestDispatcher("/Views/addReservation.jsp").forward(req, resp);
     }
 
     private void sendSMS(String mobile, String message) {

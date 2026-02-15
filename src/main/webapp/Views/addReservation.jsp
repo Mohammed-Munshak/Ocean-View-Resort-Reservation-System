@@ -6,7 +6,7 @@
 <%
   String role = (String) session.getAttribute("role");
   if (role == null || !"RECEPTIONIST".equalsIgnoreCase(role)) {
-    response.sendRedirect(request.getContextPath() + "/login.jsp");
+    response.sendRedirect(request.getContextPath() + "/Views/login.jsp");
     return;
   }
 
@@ -583,7 +583,7 @@
 
   <div class="header-row">
     <h2><i class="fas fa-calendar-plus"></i> Create New Reservation</h2>
-    <a href="<%= request.getContextPath() %>/receptionistDashboard.jsp" class="back-link">
+    <a href="<%= request.getContextPath() %>/Views/receptionistDashboard.jsp" class="back-link">
       <i class="fas fa-arrow-left"></i> Back to Dashboard
     </a>
   </div>

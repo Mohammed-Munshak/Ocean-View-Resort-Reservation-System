@@ -20,12 +20,12 @@ public class ManageRoomTypesServlet extends HttpServlet {
         HttpSession session = req.getSession(false);
         if (session == null || session.getAttribute("role") == null ||
                 !"ADMIN".equalsIgnoreCase((String) session.getAttribute("role"))) {
-            resp.sendRedirect(req.getContextPath() + "/login.jsp");
+            resp.sendRedirect(req.getContextPath() + "/Views/login.jsp");
             return;
         }
 
         req.setAttribute("roomTypes", roomTypeDAO.getAllRoomTypes());
-        req.getRequestDispatcher("/manageRoomTypes.jsp").forward(req, resp);
+        req.getRequestDispatcher("/Views/manageRoomTypes.jsp").forward(req, resp);
     }
 
     @Override
@@ -35,7 +35,7 @@ public class ManageRoomTypesServlet extends HttpServlet {
         HttpSession session = req.getSession(false);
         if (session == null || session.getAttribute("role") == null ||
                 !"ADMIN".equalsIgnoreCase((String) session.getAttribute("role"))) {
-            resp.sendRedirect(req.getContextPath() + "/login.jsp");
+            resp.sendRedirect(req.getContextPath() + "/Views/login.jsp");
             return;
         }
 
@@ -78,6 +78,6 @@ public class ManageRoomTypesServlet extends HttpServlet {
         }
 
         req.setAttribute("roomTypes", roomTypeDAO.getAllRoomTypes());
-        req.getRequestDispatcher("/manageRoomTypes.jsp").forward(req, resp);
+        req.getRequestDispatcher("/Views/manageRoomTypes.jsp").forward(req, resp);
     }
 }

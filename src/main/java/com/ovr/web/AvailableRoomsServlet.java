@@ -22,7 +22,7 @@ public class AvailableRoomsServlet extends HttpServlet {
         HttpSession session = req.getSession(false);
         if (session == null || session.getAttribute("role") == null ||
                 !"RECEPTIONIST".equalsIgnoreCase((String) session.getAttribute("role"))) {
-            resp.sendRedirect(req.getContextPath() + "/login.jsp");
+            resp.sendRedirect(req.getContextPath() + "/Views/login.jsp");
             return;
         }
 
@@ -48,6 +48,6 @@ public class AvailableRoomsServlet extends HttpServlet {
             req.setAttribute("error", "Please select room type and dates to see available rooms.");
         }
 
-        req.getRequestDispatcher("/addReservation.jsp").forward(req, resp);
+        req.getRequestDispatcher("/Views/addReservation.jsp").forward(req, resp);
     }
 }

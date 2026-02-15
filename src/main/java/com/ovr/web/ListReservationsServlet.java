@@ -20,11 +20,11 @@ public class ListReservationsServlet extends HttpServlet {
         HttpSession session = req.getSession(false);
         if (session == null || session.getAttribute("role") == null ||
                 !"RECEPTIONIST".equalsIgnoreCase((String) session.getAttribute("role"))) {
-            resp.sendRedirect(req.getContextPath() + "/login.jsp");
+            resp.sendRedirect(req.getContextPath() + "/Views/login.jsp");
             return;
         }
 
         req.setAttribute("reservations", reservationDAO.getLatestReservations(100));
-        req.getRequestDispatcher("/listReservations.jsp").forward(req, resp);
+        req.getRequestDispatcher("/Views/listReservations.jsp").forward(req, resp);
     }
 }

@@ -22,7 +22,7 @@ public class UpdateReservationServlet extends HttpServlet {
         HttpSession session = req.getSession(false);
         if (session == null || session.getAttribute("role") == null ||
                 !"RECEPTIONIST".equalsIgnoreCase((String) session.getAttribute("role"))) {
-            resp.sendRedirect(req.getContextPath() + "/login.jsp");
+            resp.sendRedirect(req.getContextPath() + "/Views/login.jsp");
             return;
         }
 
@@ -35,12 +35,12 @@ public class UpdateReservationServlet extends HttpServlet {
         ReservationView r = reservationDAO.findByReservationNo(reservationNo.trim());
         if (r == null) {
             req.setAttribute("error", "Reservation not found.");
-            req.getRequestDispatcher("/viewReservation.jsp").forward(req, resp);
+            req.getRequestDispatcher("/Views/viewReservation.jsp").forward(req, resp);
             return;
         }
 
         req.setAttribute("reservation", r);
-        req.getRequestDispatcher("/updateReservation.jsp").forward(req, resp);
+        req.getRequestDispatcher("/Views/updateReservation.jsp").forward(req, resp);
     }
 
     @Override
@@ -50,7 +50,7 @@ public class UpdateReservationServlet extends HttpServlet {
         HttpSession session = req.getSession(false);
         if (session == null || session.getAttribute("role") == null ||
                 !"RECEPTIONIST".equalsIgnoreCase((String) session.getAttribute("role"))) {
-            resp.sendRedirect(req.getContextPath() + "/login.jsp");
+            resp.sendRedirect(req.getContextPath() + "/Views/login.jsp");
             return;
         }
 
@@ -67,7 +67,7 @@ public class UpdateReservationServlet extends HttpServlet {
             checkIn == null || checkOut == null) {
 
             req.setAttribute("error", "Please fill required fields.");
-            req.getRequestDispatcher("/updateReservation.jsp").forward(req, resp);
+            req.getRequestDispatcher("/Views/updateReservation.jsp").forward(req, resp);
             return;
         }
 
@@ -75,7 +75,7 @@ public class UpdateReservationServlet extends HttpServlet {
         LocalDate out = LocalDate.parse(checkOut);
         if (!out.isAfter(in)) {
             req.setAttribute("error", "Check-out must be after check-in.");
-            req.getRequestDispatcher("/updateReservation.jsp").forward(req, resp);
+            req.getRequestDispatcher("/Views/updateReservation.jsp").forward(req, resp);
             return;
         }
 
@@ -97,6 +97,6 @@ public class UpdateReservationServlet extends HttpServlet {
             req.setAttribute("error", "Update failed (maybe reservation is not ACTIVE).");
         }
 
-        req.getRequestDispatcher("/updateReservation.jsp").forward(req, resp);
+        req.getRequestDispatcher("/Views/updateReservation.jsp").forward(req, resp);
     }
 }

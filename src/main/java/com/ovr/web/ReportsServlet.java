@@ -21,7 +21,7 @@ public class ReportsServlet extends HttpServlet {
         HttpSession session = req.getSession(false);
         if (session == null || session.getAttribute("role") == null ||
                 !"ADMIN".equalsIgnoreCase((String) session.getAttribute("role"))) {
-            resp.sendRedirect(req.getContextPath() + "/login.jsp");
+            resp.sendRedirect(req.getContextPath() + "/Views/login.jsp");
             return false;
         }
         return true;
@@ -32,7 +32,7 @@ public class ReportsServlet extends HttpServlet {
             throws ServletException, IOException {
 
         if (!adminOnly(req, resp)) return;
-        req.getRequestDispatcher("/reports.jsp").forward(req, resp);
+        req.getRequestDispatcher("/Views/reports.jsp").forward(req, resp);
     }
 
     @Override
@@ -46,7 +46,7 @@ public class ReportsServlet extends HttpServlet {
 
         if (fromDate == null || toDate == null || fromDate.isEmpty() || toDate.isEmpty()) {
             req.setAttribute("error", "Please select both From and To dates.");
-            req.getRequestDispatcher("/reports.jsp").forward(req, resp);
+            req.getRequestDispatcher("/Views/reports.jsp").forward(req, resp);
             return;
         }
 
@@ -106,6 +106,6 @@ public class ReportsServlet extends HttpServlet {
             req.setAttribute("error", "Failed to generate report. Check server console for details.");
         }
 
-        req.getRequestDispatcher("/reports.jsp").forward(req, resp);
+        req.getRequestDispatcher("/Views/reports.jsp").forward(req, resp);
     }
 }

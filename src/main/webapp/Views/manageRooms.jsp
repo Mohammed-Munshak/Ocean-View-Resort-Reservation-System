@@ -6,7 +6,7 @@
 <%
   String role = (String) session.getAttribute("role");
   if (role == null || !"ADMIN".equalsIgnoreCase(role)) {
-    response.sendRedirect(request.getContextPath() + "/login.jsp");
+    response.sendRedirect(request.getContextPath() + "/Views/login.jsp");
     return;
   }
 
@@ -769,7 +769,7 @@
       <i class="fas fa-door-open"></i>
       <span>Room Management</span>
     </div>
-    <a href="<%= request.getContextPath() %>/adminDashboard.jsp" class="back-link">
+    <a href="<%= request.getContextPath() %>/Views/adminDashboard.jsp" class="back-link">
       <i class="fas fa-arrow-left"></i> Back to Dashboard
     </a>
   </div>

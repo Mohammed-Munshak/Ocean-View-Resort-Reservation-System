@@ -3,7 +3,7 @@
 <%
   String role = (String) session.getAttribute("role");
   if (role == null) {
-    response.sendRedirect(request.getContextPath() + "/login.jsp");
+    response.sendRedirect(request.getContextPath() + "/Views/login.jsp");
     return;
   }
 
@@ -556,12 +556,12 @@
 
   <div class="nav-tabs">
     <% if (isAdmin) { %>
-      <a href="<%= request.getContextPath() %>/help.jsp?view=admin" 
+      <a href="<%= request.getContextPath() %>/Views/help.jsp?view=admin" 
          class="nav-link <%= "admin".equals(view) ? "active" : "" %>">
          <i class="fas fa-user-shield"></i> Admin Guide
       </a>
       
-      <a href="<%= request.getContextPath() %>/help.jsp?view=receptionist" 
+      <a href="<%= request.getContextPath() %>/Views/help.jsp?view=receptionist" 
          class="nav-link <%= "receptionist".equals(view) || "self".equals(view) ? "active" : "" %>">
          <i class="fas fa-concierge-bell"></i> Receptionist Guide
       </a>
@@ -681,11 +681,11 @@
 
   <div class="footer-action">
     <% if (isAdmin) { %>
-      <a href="<%= request.getContextPath() %>/adminDashboard.jsp" class="btn-back">
+      <a href="<%= request.getContextPath() %>/Views/adminDashboard.jsp" class="btn-back">
         <i class="fas fa-arrow-left"></i> Return to Admin Dashboard
       </a>
     <% } else { %>
-      <a href="<%= request.getContextPath() %>/receptionistDashboard.jsp" class="btn-back">
+      <a href="<%= request.getContextPath() %>/Views/receptionistDashboard.jsp" class="btn-back">
         <i class="fas fa-arrow-left"></i> Return to Receptionist Dashboard
       </a>
     <% } %>

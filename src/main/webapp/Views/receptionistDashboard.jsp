@@ -2,7 +2,7 @@
 <%
   String role = (String) session.getAttribute("role");
   if (role == null || !"RECEPTIONIST".equalsIgnoreCase(role)) {
-    response.sendRedirect(request.getContextPath() + "/login.jsp");
+    response.sendRedirect(request.getContextPath() + "/Views/login.jsp");
     return;
   }
 %>
@@ -699,7 +699,7 @@
         </div>
       </a>
 
-      <a href="<%= request.getContextPath() %>/help.jsp" class="card">
+      <a href="<%= request.getContextPath() %>/Views/help.jsp" class="card">
         <div class="card-icon-wrapper">
           <i class="fas fa-question-circle"></i>
         </div>

@@ -26,12 +26,12 @@ public class ManageReceptionistsServlet extends HttpServlet {
         HttpSession session = req.getSession(false);
         if (session == null || session.getAttribute("role") == null ||
                 !"ADMIN".equalsIgnoreCase((String) session.getAttribute("role"))) {
-            resp.sendRedirect(req.getContextPath() + "/login.jsp");
+            resp.sendRedirect(req.getContextPath() + "/Views/login.jsp");
             return;
         }
 
         req.setAttribute("receptionists", userDAO.getReceptionists());
-        req.getRequestDispatcher("/manageReceptionists.jsp").forward(req, resp);
+        req.getRequestDispatcher("/Views/manageReceptionists.jsp").forward(req, resp);
     }
 
     @Override
@@ -41,7 +41,7 @@ public class ManageReceptionistsServlet extends HttpServlet {
         HttpSession session = req.getSession(false);
         if (session == null || session.getAttribute("role") == null ||
                 !"ADMIN".equalsIgnoreCase((String) session.getAttribute("role"))) {
-            resp.sendRedirect(req.getContextPath() + "/login.jsp");
+            resp.sendRedirect(req.getContextPath() + "/Views/login.jsp");
             return;
         }
 
@@ -107,7 +107,7 @@ public class ManageReceptionistsServlet extends HttpServlet {
         }
 
         req.setAttribute("receptionists", userDAO.getReceptionists());
-        req.getRequestDispatcher("/manageReceptionists.jsp").forward(req, resp);
+        req.getRequestDispatcher("/Views/manageReceptionists.jsp").forward(req, resp);
     }
 
     private void sendSMS(String mobile, String message) {

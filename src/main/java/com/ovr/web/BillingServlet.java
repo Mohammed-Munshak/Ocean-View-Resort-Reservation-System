@@ -25,11 +25,11 @@ public class BillingServlet extends HttpServlet {
         HttpSession session = req.getSession(false);
         if (session == null || session.getAttribute("role") == null ||
                 !"RECEPTIONIST".equalsIgnoreCase((String) session.getAttribute("role"))) {
-            resp.sendRedirect(req.getContextPath() + "/login.jsp");
+            resp.sendRedirect(req.getContextPath() + "/Views/login.jsp");
             return;
         }
 
-        req.getRequestDispatcher("/billing.jsp").forward(req, resp);
+        req.getRequestDispatcher("/Views/billing.jsp").forward(req, resp);
     }
 
     @Override
@@ -39,7 +39,7 @@ public class BillingServlet extends HttpServlet {
         HttpSession session = req.getSession(false);
         if (session == null || session.getAttribute("role") == null ||
                 !"RECEPTIONIST".equalsIgnoreCase((String) session.getAttribute("role"))) {
-            resp.sendRedirect(req.getContextPath() + "/login.jsp");
+            resp.sendRedirect(req.getContextPath() + "/Views/login.jsp");
             return;
         }
 
@@ -47,7 +47,7 @@ public class BillingServlet extends HttpServlet {
 
         if (reservationNo == null || reservationNo.trim().isEmpty()) {
             req.setAttribute("error", "Please enter reservation number.");
-            req.getRequestDispatcher("/billing.jsp").forward(req, resp);
+            req.getRequestDispatcher("/Views/billing.jsp").forward(req, resp);
             return;
         }
 
@@ -55,13 +55,13 @@ public class BillingServlet extends HttpServlet {
 
         if (r == null) {
             req.setAttribute("error", "Reservation not found.");
-            req.getRequestDispatcher("/billing.jsp").forward(req, resp);
+            req.getRequestDispatcher("/Views/billing.jsp").forward(req, resp);
             return;
         }
 
         if (!"ACTIVE".equalsIgnoreCase(r.getStatus()) && !"COMPLETED".equalsIgnoreCase(r.getStatus())) {
             req.setAttribute("error", "Reservation is cancelled. Cannot generate bill.");
-            req.getRequestDispatcher("/billing.jsp").forward(req, resp);
+            req.getRequestDispatcher("/Views/billing.jsp").forward(req, resp);
             return;
         }
 
@@ -71,7 +71,7 @@ public class BillingServlet extends HttpServlet {
             req.setAttribute("bill", existing);
             req.setAttribute("reservation", r);
             req.setAttribute("info", "Bill already generated. Showing it again for re-print.");
-            req.getRequestDispatcher("/billDetails.jsp").forward(req, resp);
+            req.getRequestDispatcher("/Views/billDetails.jsp").forward(req, resp);
             return;
         }
 
@@ -88,12 +88,12 @@ public class BillingServlet extends HttpServlet {
 
         if (!saved) {
             req.setAttribute("error", "Failed to save bill.");
-            req.getRequestDispatcher("/billing.jsp").forward(req, resp);
+            req.getRequestDispatcher("/Views/billing.jsp").forward(req, resp);
             return;
         }
 
         req.setAttribute("reservation", r);
         req.setAttribute("bill", b);
-        req.getRequestDispatcher("/billDetails.jsp").forward(req, resp);
+        req.getRequestDispatcher("/Views/billDetails.jsp").forward(req, resp);
     }
 }

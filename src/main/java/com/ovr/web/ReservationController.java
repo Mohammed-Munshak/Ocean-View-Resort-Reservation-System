@@ -26,7 +26,7 @@ public class ReservationController extends HttpServlet {
         HttpSession session = req.getSession(false);
         if (session == null || session.getAttribute("role") == null ||
                 !"RECEPTIONIST".equalsIgnoreCase((String) session.getAttribute("role"))) {
-            resp.sendRedirect(req.getContextPath() + "/login.jsp");
+            resp.sendRedirect(req.getContextPath() + "/Views/login.jsp");
             return false;
         }
         return true;
@@ -42,16 +42,16 @@ public class ReservationController extends HttpServlet {
         switch (path) {
             case "/new":
                 req.setAttribute("roomTypes", roomTypeDAO.getActiveRoomTypes());
-                req.getRequestDispatcher("/addReservation.jsp").forward(req, resp);
+                req.getRequestDispatcher("/Views/addReservation.jsp").forward(req, resp);
                 break;
 
             case "/list":
                 req.setAttribute("reservations", reservationDAO.getLatestReservations(100));
-                req.getRequestDispatcher("/listReservations.jsp").forward(req, resp);
+                req.getRequestDispatcher("/Views/listReservations.jsp").forward(req, resp);
                 break;
 
             case "/view":
-                req.getRequestDispatcher("/viewReservation.jsp").forward(req, resp);
+                req.getRequestDispatcher("/Views/viewReservation.jsp").forward(req, resp);
                 break;
 
             default:
@@ -86,7 +86,7 @@ public class ReservationController extends HttpServlet {
                 req.setAttribute("error", "Please select valid room type and dates.");
             }
 
-            req.getRequestDispatcher("/addReservation.jsp").forward(req, resp);
+            req.getRequestDispatcher("/Views/addReservation.jsp").forward(req, resp);
             return;
         }
 
@@ -105,13 +105,13 @@ public class ReservationController extends HttpServlet {
             if (guestName == null || guestName.trim().isEmpty() ||
                 guestContact == null || guestContact.trim().isEmpty()) {
                 req.setAttribute("error", "Guest Name and Contact are required.");
-                req.getRequestDispatcher("/addReservation.jsp").forward(req, resp);
+                req.getRequestDispatcher("/Views/addReservation.jsp").forward(req, resp);
                 return;
             }
 
             if (roomIdStr == null || roomIdStr.trim().isEmpty()) {
                 req.setAttribute("error", "Please select an available room.");
-                req.getRequestDispatcher("/addReservation.jsp").forward(req, resp);
+                req.getRequestDispatcher("/Views/addReservation.jsp").forward(req, resp);
                 return;
             }
 
@@ -120,7 +120,7 @@ public class ReservationController extends HttpServlet {
 
             if (!checkOut.isAfter(checkIn)) {
                 req.setAttribute("error", "Check-out must be after check-in.");
-                req.getRequestDispatcher("/addReservation.jsp").forward(req, resp);
+                req.getRequestDispatcher("/Views/addReservation.jsp").forward(req, resp);
                 return;
             }
 
@@ -145,7 +145,7 @@ public class ReservationController extends HttpServlet {
                 req.setAttribute("error", "Failed to save reservation. Check console for SQL error.");
             }
 
-            req.getRequestDispatcher("/addReservation.jsp").forward(req, resp);
+            req.getRequestDispatcher("/Views/addReservation.jsp").forward(req, resp);
             return;
         }
 

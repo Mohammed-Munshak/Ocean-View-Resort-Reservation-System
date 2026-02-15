@@ -20,11 +20,11 @@ public class AddReservationPageServlet extends HttpServlet {
         HttpSession session = req.getSession(false);
         if (session == null || session.getAttribute("role") == null ||
                 !"RECEPTIONIST".equalsIgnoreCase((String) session.getAttribute("role"))) {
-            resp.sendRedirect(req.getContextPath() + "/login.jsp");
+            resp.sendRedirect(req.getContextPath() + "/Views/login.jsp");
             return;
         }
 
         req.setAttribute("roomTypes", new com.ovr.dao.RoomTypeDAO().getActiveRoomTypes());
-        req.getRequestDispatcher("/addReservation.jsp").forward(req, resp);
+        req.getRequestDispatcher("/Views/addReservation.jsp").forward(req, resp);
     }
 }
