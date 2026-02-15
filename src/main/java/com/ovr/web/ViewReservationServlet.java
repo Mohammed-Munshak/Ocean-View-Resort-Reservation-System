@@ -63,21 +63,17 @@ public class ViewReservationServlet extends HttpServlet {
             return;
         }
 
-        // ---------------------------------------------------------
-        // ACTION 2: CANCEL RESERVATION
-        // ---------------------------------------------------------
+
         if ("cancel".equals(action)) {
             String reservationNo = req.getParameter("reservationNo");
             boolean ok = reservationDAO.cancelReservation(reservationNo);
 
             if (ok) {
                 req.setAttribute("success", "Reservation cancelled successfully.");
-                
-                // Fetch the details to show on screen AND to send in the SMS
+               
                 ReservationView r = reservationDAO.findByReservationNo(reservationNo);
                 req.setAttribute("reservation", r);
 
-                // --- SEND CANCELLATION SMS ---
                 if (r != null) {
                     String cancelMsg = "Ocean View Resort Alert: Dear " + r.getGuestName() + 
                                        ", your reservation " + r.getReservationNo() + 
