@@ -83,7 +83,6 @@
       animation: fadeIn 0.6s ease-out;
     }
 
-    /* Header */
     .header-row {
       display: flex;
       justify-content: space-between;
@@ -156,7 +155,6 @@
       transform: translateX(-3px);
     }
 
-    /* Main Card */
     .card {
       background: var(--white);
       padding: 40px;
@@ -178,14 +176,12 @@
       background: linear-gradient(90deg, var(--turquoise) 0%, var(--coral-orange) 100%);
     }
 
-    /* Reservation Grid Layout */
     .reservations-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
       gap: 24px;
     }
 
-    /* Individual Reservation Card */
     .reservation-card {
       background: linear-gradient(135deg, var(--white) 0%, rgba(252, 238, 209, 0.15) 100%);
       border: 2px solid var(--border-light);
@@ -218,7 +214,6 @@
       width: 8px;
     }
 
-    /* Reservation Header */
     .reservation-header {
       display: flex;
       justify-content: space-between;
@@ -249,7 +244,6 @@
       color: var(--turquoise);
     }
 
-    /* View Button Below ID */
     .btn-view {
       background: linear-gradient(135deg, var(--turquoise) 0%, var(--navy-blue) 100%);
       color: var(--white);
@@ -278,7 +272,6 @@
       font-size: 13px;
     }
 
-    /* Status Badge */
     .status-badge {
       padding: 6px 14px;
       border-radius: 20px;
@@ -320,7 +313,6 @@
       border: 2px solid var(--info);
     }
 
-    /* Reservation Details */
     .reservation-details {
       display: flex;
       flex-direction: column;
@@ -368,7 +360,6 @@
       color: var(--text-muted);
     }
 
-    /* Empty State */
     .empty-state {
       text-align: center;
       padding: 80px 20px;
@@ -388,7 +379,6 @@
       font-weight: 500;
     }
 
-    /* Animations */
     @keyframes fadeIn {
       from { opacity: 0; }
       to { opacity: 1; }
@@ -416,7 +406,6 @@
       }
     }
 
-    /* Responsive Design */
     @media (max-width: 1200px) {
       .reservations-grid {
         grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
@@ -499,7 +488,6 @@
       }
     }
 
-    /* Selection Color */
     ::selection {
       background-color: var(--turquoise);
       color: var(--white);
@@ -510,7 +498,6 @@
       color: var(--white);
     }
 
-    /* Focus styles for accessibility */
     *:focus-visible {
       outline: 2px solid var(--turquoise);
       outline-offset: 2px;

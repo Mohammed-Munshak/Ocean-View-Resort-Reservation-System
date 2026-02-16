@@ -50,7 +50,6 @@
       position: relative;
     }
 
-    /* Subtle professional background pattern */
     body::before {
       content: '';
       position: fixed;
@@ -67,7 +66,6 @@
       z-index: 0;
     }
 
-    /* Premium Header */
     .header {
       background: linear-gradient(135deg, var(--navy-blue) 0%, #2C4F7F 100%);
       padding: 0;
@@ -224,7 +222,6 @@
       transform: translateX(4px);
     }
 
-    /* Main Container */
     .container {
       max-width: 1400px;
       margin: 0 auto;
@@ -233,7 +230,6 @@
       z-index: 1;
     }
 
-    /* Page Header */
     .page-header {
       margin-bottom: 48px;
       animation: fadeInDown 0.6s ease-out;
@@ -264,7 +260,6 @@
       max-width: 650px;
     }
 
-    /* Dashboard Grid */
     .dashboard-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -272,7 +267,6 @@
       animation: fadeInUp 0.6s ease-out 0.2s both;
     }
 
-    /* Premium Card Styles */
     .card {
       background: var(--white);
       border-radius: 20px;
@@ -290,7 +284,6 @@
       background: linear-gradient(135deg, var(--white) 0%, rgba(252, 238, 209, 0.3) 100%);
     }
 
-    /* Premium gradient accent bar */
     .card::before {
       content: '';
       position: absolute;
@@ -415,7 +408,6 @@
       transform: translateX(5px);
     }
 
-    /* Premium color variants for different cards */
     .card:nth-child(1) .card-icon-wrapper { 
       background: linear-gradient(135deg, rgba(27, 59, 111, 0.1) 0%, rgba(28, 167, 166, 0.1) 100%);
     }
@@ -450,7 +442,6 @@
     .card:nth-child(5):hover h3 { color: var(--danger); }
     .card:nth-child(5) .card-footer { color: var(--danger); background: rgba(239, 68, 68, 0.05); }
 
-    /* Smooth Animations */
     @keyframes fadeInDown {
       from {
         opacity: 0;
@@ -473,7 +464,6 @@
       }
     }
 
-    /* Responsive Design */
     @media (max-width: 1200px) {
       .dashboard-grid {
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -565,12 +555,10 @@
       }
     }
 
-    /* Smooth scrolling */
     html {
       scroll-behavior: smooth;
     }
 
-    /* Premium selection color */
     ::selection {
       background-color: var(--turquoise);
       color: var(--white);
@@ -581,7 +569,6 @@
       color: var(--white);
     }
 
-    /* Focus styles for accessibility */
     *:focus-visible {
       outline: 2px solid var(--turquoise);
       outline-offset: 2px;
@@ -670,19 +657,6 @@
         </div>
         <div class="card-footer">
           View Reports <i class="fas fa-arrow-right"></i>
-        </div>
-      </a>
-
-      <a href="<%= request.getContextPath() %>/help.jsp" class="card">
-        <div class="card-icon-wrapper">
-          <i class="fas fa-life-ring"></i>
-        </div>
-        <div class="card-content">
-          <h3>Help</h3>
-          <p>System documentation and troubleshooting guides</p>
-        </div>
-        <div class="card-footer">
-          Get Help <i class="fas fa-arrow-right"></i>
         </div>
       </a>
     </div>

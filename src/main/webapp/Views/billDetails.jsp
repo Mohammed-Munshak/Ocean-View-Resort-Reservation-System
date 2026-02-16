@@ -84,7 +84,6 @@
       border: 1px solid rgba(27, 59, 111, 0.08);
     }
 
-    /* Premium top accent */
     .invoice-card::before {
       content: '';
       position: absolute;
@@ -96,7 +95,6 @@
       border-radius: 20px 20px 0 0;
     }
 
-    /* Invoice Header */
     .invoice-header {
       text-align: center;
       padding-bottom: 24px;
@@ -146,7 +144,6 @@
       border: 2px solid var(--turquoise);
     }
 
-    /* Info Grid - Compact */
     .info-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -183,7 +180,6 @@
       font-weight: 700;
     }
 
-    /* Cost Table - Compact */
     .cost-table {
       width: 100%;
       border-collapse: collapse;
@@ -217,7 +213,6 @@
       background: rgba(28, 167, 166, 0.03);
     }
 
-    /* Alignment Classes */
     .align-left { text-align: left; }
     .align-center { text-align: center; }
     .align-right { text-align: right; }
@@ -235,7 +230,6 @@
       padding: 16px 14px;
     }
 
-    /* Thank You Message */
     .thank-you-box {
       margin: 28px 0 24px;
       padding: 20px;
@@ -266,7 +260,6 @@
       line-height: 1.6;
     }
 
-    /* Action Buttons */
     .action-buttons {
       margin-top: 32px;
       text-align: center;
@@ -331,7 +324,6 @@
       color: var(--navy-blue);
     }
 
-    /* Error State */
     .error-state {
       text-align: center;
       color: var(--error);
@@ -355,7 +347,6 @@
       margin-bottom: 24px;
     }
 
-    /* Print Styles */
     @media print {
       body {
         background: white;
@@ -406,7 +397,6 @@
       }
     }
 
-    /* Animations */
     @keyframes fadeInUp {
       from {
         opacity: 0;
@@ -418,7 +408,6 @@
       }
     }
 
-    /* Responsive */
     @media (max-width: 600px) {
       body {
         padding: 20px 12px;
@@ -480,7 +469,6 @@
       }
     }
 
-    /* Selection Color */
     ::selection {
       background-color: var(--turquoise);
       color: var(--white);

@@ -82,7 +82,7 @@ public class ReservationServlet extends HttpServlet {
         }
 
         Reservation r = new Reservation();
-        String resNo = "RES-" + UUID.randomUUID().toString().substring(0, 8).toUpperCase(); // Generate ID
+        String resNo = "RES-" + UUID.randomUUID().toString().substring(0, 8).toUpperCase(); 
         r.setReservationNo(resNo);
         r.setGuestName(guestName);
         r.setGuestAddress(guestAddress);

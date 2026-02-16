@@ -90,7 +90,6 @@
       animation: fadeIn 0.6s ease-out;
     }
 
-    /* Header */
     .header-row {
       display: flex;
       justify-content: space-between;
@@ -163,7 +162,6 @@
       transform: translateX(-3px);
     }
 
-    /* Alert Messages */
     .alert {
       padding: 18px 24px;
       border-radius: 14px;
@@ -193,7 +191,6 @@
       border-left: 5px solid var(--success);
     }
 
-    /* Card Styles */
     .card {
       background: var(--white);
       border-radius: 20px;
@@ -244,7 +241,6 @@
       box-shadow: 0 4px 12px rgba(28, 167, 166, 0.3);
     }
 
-    /* Form Grid */
     .search-grid {
       display: grid;
       grid-template-columns: 2fr 1fr 1fr auto;
@@ -262,7 +258,6 @@
       grid-column: span 2;
     }
 
-    /* Form Elements */
     label {
       display: block;
       margin-bottom: 10px;
@@ -314,7 +309,6 @@
       padding-right: 40px;
     }
 
-    /* Special styling for available room select */
     select[name="roomId"] {
       border: 2px solid var(--turquoise);
       background-color: rgba(28, 167, 166, 0.03);
@@ -326,7 +320,6 @@
       box-shadow: 0 0 0 4px rgba(28, 167, 166, 0.15);
     }
 
-    /* Check Button */
     .btn-check {
       background: linear-gradient(135deg, var(--navy-blue) 0%, var(--turquoise) 100%);
       color: var(--white);
@@ -378,7 +371,6 @@
       font-size: 16px;
     }
 
-    /* Submit Button */
     .btn-submit {
       width: 100%;
       padding: 18px;
@@ -431,7 +423,6 @@
       font-size: 18px;
     }
 
-    /* Animations */
     @keyframes fadeIn {
       from { opacity: 0; }
       to { opacity: 1; }
@@ -470,7 +461,6 @@
       }
     }
 
-    /* Responsive Design */
     @media (max-width: 768px) {
       body {
         padding: 24px 16px;
@@ -555,7 +545,6 @@
       }
     }
 
-    /* Selection Color */
     ::selection {
       background-color: var(--turquoise);
       color: var(--white);
@@ -566,7 +555,6 @@
       color: var(--white);
     }
 
-    /* Focus styles for accessibility */
     *:focus-visible {
       outline: 2px solid var(--turquoise);
       outline-offset: 2px;

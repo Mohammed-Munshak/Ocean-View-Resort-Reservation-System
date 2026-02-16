@@ -73,7 +73,6 @@
       z-index: 0;
     }
 
-    /* Premium Navigation Header */
     .top-nav {
       background: linear-gradient(135deg, var(--navy-blue) 0%, #2C4F7F 100%);
       padding: 0;
@@ -146,7 +145,6 @@
       animation: fadeIn 0.6s ease-out;
     }
 
-    /* Alert Messages */
     .alert {
       padding: 18px 24px;
       border-radius: 14px;
@@ -176,7 +174,6 @@
       border-left: 5px solid var(--error);
     }
 
-    /* Card Styles */
     .card {
       background: var(--white);
       padding: 42px 40px;
@@ -217,7 +214,6 @@
       color: var(--turquoise);
     }
 
-    /* Form Styles */
     .form-grid {
       display: grid;
       grid-template-columns: 1fr 1fr 2fr auto;
@@ -313,7 +309,6 @@
       transform: translateY(-1px);
     }
 
-    /* Table Styles */
     .table-responsive { 
       overflow-x: auto;
       border-radius: 16px;
@@ -376,7 +371,6 @@
       font-size: 13px;
     }
 
-    /* Rate Display */
     .rate-display {
       font-weight: 700;
       color: var(--turquoise);
@@ -384,7 +378,6 @@
       font-family: 'Courier New', monospace;
     }
 
-    /* Status Badge */
     .badge {
       display: inline-flex;
       align-items: center;
@@ -419,7 +412,6 @@
       border: 2px solid var(--error);
     }
 
-    /* Inline Form */
     .inline-form {
       display: flex;
       gap: 10px;
@@ -466,7 +458,6 @@
       font-size: 14px;
     }
 
-    /* Toggle Buttons */
     .btn-toggle {
       padding: 10px 18px;
       border-radius: 10px;
@@ -510,7 +501,6 @@
       box-shadow: 0 6px 16px rgba(5, 150, 105, 0.4);
     }
 
-    /* Empty State */
     .empty-state {
       text-align: center;
       padding: 80px 20px;
@@ -530,7 +520,6 @@
       font-weight: 500;
     }
 
-    /* Animations */
     @keyframes fadeIn {
       from { opacity: 0; }
       to { opacity: 1; }
@@ -558,7 +547,6 @@
       }
     }
 
-    /* Responsive Design */
     @media (max-width: 1200px) {
       .form-grid {
         grid-template-columns: 1fr 1fr;
@@ -652,7 +640,6 @@
         font-size: 18px;
       }
 
-      /* Mobile table view */
       .table-responsive {
         border-radius: 0;
       }
@@ -706,7 +693,6 @@
       }
     }
 
-    /* Premium Selection Color */
     ::selection {
       background-color: var(--turquoise);
       color: var(--white);
@@ -717,7 +703,6 @@
       color: var(--white);
     }
 
-    /* Focus styles for accessibility */
     *:focus-visible {
       outline: 2px solid var(--turquoise);
       outline-offset: 2px;

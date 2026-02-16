@@ -122,7 +122,6 @@
       animation: fadeIn 0.6s ease-out;
     }
 
-    /* Top Actions Bar */
     .actions-row {
       display: flex;
       justify-content: flex-end;
@@ -165,7 +164,6 @@
       transform: translateX(-3px);
     }
 
-    /* Alert Message */
     .alert {
       background: var(--error-light);
       color: var(--error);
@@ -186,7 +184,6 @@
       font-size: 22px;
     }
 
-    /* Controls Card */
     .controls-card {
       background: var(--white);
       padding: 32px;
@@ -320,7 +317,6 @@
       font-size: 16px;
     }
 
-    /* Print Button */
     .btn-print {
       background: linear-gradient(135deg, var(--coral-orange) 0%, #FF6347 100%);
       color: var(--white);
@@ -348,7 +344,6 @@
       font-size: 16px;
     }
 
-    /* Report Sheet */
     .report-sheet {
       background: var(--white);
       padding: 48px;
@@ -405,7 +400,6 @@
       border: 1px solid rgba(28, 167, 166, 0.2);
     }
 
-    /* Table Styles */
     table {
       width: 100%;
       border-collapse: collapse;
@@ -467,7 +461,6 @@
       font-size: 12px;
     }
 
-    /* Total Box */
     .total-box {
       margin-top: 40px;
       text-align: right;
@@ -496,7 +489,6 @@
       letter-spacing: 1px;
     }
 
-    /* Animations */
     @keyframes fadeIn {
       from { opacity: 0; }
       to { opacity: 1; }
@@ -535,7 +527,6 @@
       }
     }
 
-    /* Print Styles */
     @media print {
       body {
         background: white;
@@ -585,7 +576,6 @@
       }
     }
 
-    /* Responsive Design */
     @media (max-width: 768px) {
       body {
         padding: 20px 16px;
@@ -666,7 +656,6 @@
       }
     }
 
-    /* Selection Color */
     ::selection {
       background-color: var(--turquoise);
       color: var(--white);

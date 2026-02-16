@@ -46,7 +46,6 @@
       position: relative;
     }
 
-    /* Premium geometric background */
     body::before {
       content: '';
       position: fixed;
@@ -61,8 +60,7 @@
       pointer-events: none;
       z-index: 0;
     }
-
-    /* Ultra Premium Header */
+    
     .header {
       background: linear-gradient(135deg, var(--navy-blue) 0%, #2C4F7F 100%);
       padding: 0;
@@ -216,7 +214,6 @@
       transform: translateX(4px);
     }
 
-    /* Main Container */
     .container {
       max-width: 1400px;
       margin: 0 auto;
@@ -226,7 +223,6 @@
       animation: fadeIn 0.6s ease-out;
     }
 
-    /* Page Header */
     .page-header {
       margin-bottom: 48px;
       animation: fadeInDown 0.6s ease-out;
@@ -256,7 +252,6 @@
       max-width: 700px;
     }
 
-    /* Premium Card Grid */
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -264,7 +259,6 @@
       animation: fadeInUp 0.6s ease-out 0.2s both;
     }
 
-    /* Ultra Professional Card Design */
     .card {
       background: var(--white);
       border-radius: 24px;
@@ -280,7 +274,6 @@
       background: linear-gradient(135deg, var(--white) 0%, rgba(252, 238, 209, 0.2) 100%);
     }
 
-    /* Premium gradient accent bar */
     .card::before {
       content: '';
       position: absolute;
@@ -294,7 +287,6 @@
       transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
-    /* Radial glow effect */
     .card::after {
       content: '';
       position: absolute;
@@ -323,7 +315,6 @@
       border-color: rgba(28, 167, 166, 0.25);
     }
 
-    /* Icon Container */
     .card-icon-wrapper {
       width: 80px;
       height: 80px;
@@ -356,7 +347,6 @@
       color: var(--navy-blue);
     }
 
-    /* Card Text */
     .card h3 {
       margin: 0 0 10px 0;
       font-size: 21px;
@@ -382,7 +372,6 @@
       line-height: 1.6;
     }
 
-    /* Card footer arrow */
     .card-footer {
       margin-top: 20px;
       display: flex;
@@ -413,7 +402,6 @@
       transform: translateX(5px);
     }
 
-    /* Unique colors for each card */
     .card:nth-child(1) .card-icon-wrapper {
       background: linear-gradient(135deg, rgba(28, 167, 166, 0.1) 0%, rgba(16, 185, 129, 0.1) 100%);
     }
@@ -482,7 +470,6 @@
       color: #EC4899;
     }
 
-    /* Animations */
     @keyframes fadeIn {
       from { opacity: 0; }
       to { opacity: 1; }
@@ -510,7 +497,6 @@
       }
     }
 
-    /* Responsive Design */
     @media (max-width: 1200px) {
       .grid {
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -602,7 +588,6 @@
       }
     }
 
-    /* Selection Color */
     ::selection {
       background-color: var(--turquoise);
       color: var(--white);
@@ -613,7 +598,6 @@
       color: var(--white);
     }
 
-    /* Focus styles for accessibility */
     *:focus-visible {
       outline: 2px solid var(--turquoise);
       outline-offset: 2px;
@@ -670,7 +654,7 @@
         <div class="card-icon-wrapper">
           <i class="fas fa-clipboard-list"></i>
         </div>
-        <h3>Search Bookings</h3>
+        <h3>View Reservation Details</h3>
         <p>Find and manage active reservations</p>
         <div class="card-footer">
           Search <i class="fas fa-arrow-right"></i>

@@ -93,7 +93,6 @@
       background: linear-gradient(90deg, var(--turquoise) 0%, var(--coral-orange) 100%);
     }
 
-    /* Icon Header */
     .icon-header {
       width: 80px;
       height: 80px;
@@ -133,7 +132,6 @@
       line-height: 1.6;
     }
 
-    /* Alert Error */
     .alert-error {
       background: var(--error-light);
       color: var(--error);
@@ -156,7 +154,6 @@
       flex-shrink: 0;
     }
 
-    /* Form Group */
     .form-group {
       text-align: left;
       margin-bottom: 28px;
@@ -217,7 +214,6 @@
       font-weight: 400;
     }
 
-    /* Generate Button */
     .btn-generate {
       width: 100%;
       padding: 18px;
@@ -269,7 +265,6 @@
       font-size: 18px;
     }
 
-    /* Back Link */
     .back-link {
       display: inline-flex;
       align-items: center;
@@ -302,7 +297,6 @@
       transform: translateX(-3px);
     }
 
-    /* Animations */
     @keyframes fadeInScale {
       from {
         opacity: 0;
@@ -325,7 +319,6 @@
       }
     }
 
-    /* Responsive */
     @media (max-width: 480px) {
       body {
         padding: 24px 16px;
@@ -364,7 +357,6 @@
       }
     }
 
-    /* Selection Color */
     ::selection {
       background-color: var(--turquoise);
       color: var(--white);
@@ -375,7 +367,6 @@
       color: var(--white);
     }
 
-    /* Focus styles for accessibility */
     *:focus-visible {
       outline: 2px solid var(--turquoise);
       outline-offset: 2px;

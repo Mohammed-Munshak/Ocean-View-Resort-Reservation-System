@@ -44,7 +44,6 @@
             overflow-x: hidden;
         }
 
-        /* Professional geometric background pattern */
         body::before {
             content: '';
             position: absolute;
@@ -62,7 +61,6 @@
             opacity: 0.4;
         }
 
-        /* Subtle animated gradient overlay */
         body::after {
             content: '';
             position: absolute;
@@ -117,7 +115,6 @@
             box-shadow: 0 25px 60px rgba(27, 59, 111, 0.25);
         }
 
-        /* Premium top accent bar */
         .box::before {
             content: '';
             position: absolute;
@@ -128,7 +125,6 @@
             background: linear-gradient(90deg, var(--turquoise) 0%, var(--coral-orange) 100%);
         }
 
-        /* Subtle inner glow */
         .box::after {
             content: '';
             position: absolute;
@@ -139,7 +135,6 @@
             background: linear-gradient(90deg, transparent, rgba(28, 167, 166, 0.2), transparent);
         }
 
-        /* Header section */
         .header-section {
             text-align: center;
             margin-bottom: 40px;
@@ -170,7 +165,6 @@
             overflow: hidden;
         }
 
-        /* Premium shine effect */
         .logo-icon::before {
             content: '';
             position: absolute;
@@ -215,7 +209,6 @@
             animation: fadeIn 0.8s ease-out 0.4s both;
         }
 
-        /* Form styling */
         form {
             animation: fadeIn 0.8s ease-out 0.5s both;
         }
@@ -278,7 +271,6 @@
             opacity: 0.5;
         }
 
-        /* Premium button styling */
         button {
             width: 100%;
             padding: 17px;
@@ -298,7 +290,6 @@
             margin-top: 12px;
         }
 
-        /* Animated gradient on hover */
         button::before {
             content: '';
             position: absolute;
@@ -325,7 +316,6 @@
             box-shadow: 0 5px 15px rgba(28, 167, 166, 0.3);
         }
 
-        /* Professional error message */
         .error {
             background: var(--error-bg);
             color: var(--error-color);
@@ -360,7 +350,6 @@
             }
         }
 
-        /* Responsive design */
         @media (max-width: 480px) {
             body {
                 padding: 16px;
@@ -397,7 +386,6 @@
             }
         }
 
-        /* Disabled state */
         button:disabled {
             background: linear-gradient(135deg, var(--soft-gray) 0%, #C0C0C0 100%);
             cursor: not-allowed;
@@ -405,7 +393,6 @@
             box-shadow: none;
         }
 
-        /* Selection styling */
         ::selection {
             background-color: var(--turquoise);
             color: var(--white);
@@ -416,10 +403,24 @@
             color: var(--white);
         }
 
-        /* Focus visible for accessibility */
         *:focus-visible {
             outline: 2px solid var(--turquoise);
             outline-offset: 2px;
+        }
+        
+        .btn-exit {
+            background: transparent;
+            color: var(--navy-blue);
+            border: 2px solid var(--navy-blue);
+            margin-top: 15px;
+            display: block; 
+        }
+        
+        .btn-exit:hover {
+            background: var(--navy-blue);
+            color: var(--white);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(27, 59, 111, 0.2);
         }
     </style>
 </head>
@@ -458,6 +459,20 @@
                 </div>
 
                 <button type="submit">Secure Login</button>
+                <button type="button" class="btn-exit" onclick="exitApplication()">Exit Application</button>
+
+                <script>
+                    function exitApplication() {
+                        if (confirm("Are you sure you want to close the application?")) {
+                            window.open('', '_self', ''); 
+                            window.close();
+                            setTimeout(function() {
+                                window.location.href = "about:blank"; 
+                            }, 100);
+                        }
+                    }
+                </script>
+                </script>
             </form>
         </div>
     </div>

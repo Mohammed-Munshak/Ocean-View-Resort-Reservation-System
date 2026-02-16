@@ -74,7 +74,6 @@
       z-index: 0;
     }
 
-    /* Premium Navigation Header */
     .top-nav {
       background: linear-gradient(135deg, var(--navy-blue) 0%, #2C4F7F 100%);
       padding: 0;
@@ -146,7 +145,6 @@
       z-index: 1;
     }
 
-    /* Alert Messages */
     .alert {
       padding: 18px 24px;
       border-radius: 14px;
@@ -176,7 +174,6 @@
       border-left: 5px solid var(--error);
     }
 
-    /* Add Staff Form Section */
     .add-section {
       background: var(--white);
       padding: 42px 40px;
@@ -332,7 +329,6 @@
       font-size: 18px;
     }
 
-    /* Staff Directory Section */
     .directory-section {
       background: var(--white);
       border-radius: 20px;
@@ -489,7 +485,6 @@
       box-shadow: 0 2px 8px rgba(239, 68, 68, 0.2);
     }
 
-    /* Premium Action Buttons */
     .btn-action {
       padding: 10px 18px;
       border: none;
@@ -554,7 +549,6 @@
       font-weight: 500;
     }
 
-    /* Smooth Animations */
     @keyframes slideInDown {
       from {
         opacity: 0;
@@ -577,7 +571,6 @@
       }
     }
 
-    /* Responsive Design */
     @media (max-width: 1024px) {
       .container {
         padding: 30px 24px;
@@ -710,7 +703,6 @@
       }
     }
 
-    /* Premium Selection Color */
     ::selection {
       background-color: var(--turquoise);
       color: var(--white);
@@ -721,7 +713,6 @@
       color: var(--white);
     }
 
-    /* Focus styles for accessibility */
     *:focus-visible {
       outline: 2px solid var(--turquoise);
       outline-offset: 2px;
