@@ -213,9 +213,17 @@
       background: rgba(28, 167, 166, 0.03);
     }
 
-    .align-left { text-align: left; }
-    .align-center { text-align: center; }
-    .align-right { text-align: right; }
+    .align-left { 
+      text-align: left; 
+    }
+    
+    .align-center { 
+      text-align: center; 
+    }
+    
+    .align-right { 
+      text-align: right; 
+    }
 
     .total-row {
       background: linear-gradient(135deg, rgba(28, 167, 166, 0.08) 0%, rgba(252, 238, 209, 0.15) 100%);
