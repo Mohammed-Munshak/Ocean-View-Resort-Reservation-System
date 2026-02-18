@@ -134,7 +134,7 @@ public class ReservationServlet extends HttpServlet {
 
             String jsonInputString = "{"
                     + "\"recipient\": \"" + mobile + "\","
-                    + "\"sender_id\": \"TextLKDemo\"," 
+                    + "\"sender_id\": \"OceanViewLK\","
                     + "\"message\": \"" + message + "\""
                     + "}";
 

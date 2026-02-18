@@ -316,6 +316,27 @@
             box-shadow: 0 5px 15px rgba(28, 167, 166, 0.3);
         }
 
+        /* --- Exit Button Styling --- */
+        .btn-exit {
+            background: transparent !important; /* Force transparent */
+            color: var(--navy-blue);
+            border: 2px solid var(--navy-blue);
+            margin-top: 15px;
+            box-shadow: none;
+        }
+
+        .btn-exit::before {
+            display: none; /* Remove shine effect */
+        }
+
+        .btn-exit:hover {
+            background: var(--navy-blue) !important;
+            color: var(--white);
+            box-shadow: 0 4px 12px rgba(27, 59, 111, 0.2);
+            transform: translateY(-2px);
+        }
+        /* --------------------------- */
+
         .error {
             background: var(--error-bg);
             color: var(--error-color);
@@ -407,21 +428,6 @@
             outline: 2px solid var(--turquoise);
             outline-offset: 2px;
         }
-        
-        .btn-exit {
-            background: transparent;
-            color: var(--navy-blue);
-            border: 2px solid var(--navy-blue);
-            margin-top: 15px;
-            display: block; 
-        }
-        
-        .btn-exit:hover {
-            background: var(--navy-blue);
-            color: var(--white);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(27, 59, 111, 0.2);
-        }
     </style>
 </head>
 <body>
@@ -459,23 +465,9 @@
                 </div>
 
                 <button type="submit">Secure Login</button>
-                <button type="button" class="btn-exit" onclick="exitApplication()">Exit Application</button>
 
-                <script>
-                    function exitApplication() {
-                        if (confirm("Are you sure you want to close the application?")) {
-                            window.open('', '_self', ''); 
-                            window.close();
-                            setTimeout(function() {
-                                window.location.href = "about:blank"; 
-                            }, 100);
-                        }
-                    }
-                </script>
-                </script>
             </form>
         </div>
     </div>
-
 </body>
 </html>

@@ -59,7 +59,7 @@ public class LogoutServlet extends HttpServlet {
 
             String jsonInputString = "{"
                     + "\"recipient\": \"" + mobile + "\","
-                    + "\"sender_id\": \"TextLKDemo\","
+                    + "\"sender_id\": \"OceanViewLK\","
                     + "\"message\": \"" + message + "\""
                     + "}";
 
